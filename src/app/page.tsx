@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { AuthorIntro } from '@/components/AuthorIntro';
+import { HealthFoundation } from '@/components/HealthFoundation';
 import { PhysiologyBasics } from '@/components/PhysiologyBasics';
 import { PatentSection } from '@/components/PatentSection';
 import { EvidenceAssessment } from '@/components/EvidenceAssessment';
@@ -42,10 +43,16 @@ export default function Home() {
         {/* 1. ヒーローセクション */}
         <Hero onOpenPTModal={handleOpenPTModal} />
 
-        {/* 2. 理学療法士22年の想いと客観的スタンス */}
+        {/* 2. リハビリ専門職の想いと客観的スタンス */}
         <AuthorIntro />
 
-        {/* 3. Wikipedia風 基礎生理学・生化学メカニズム */}
+        {/* 3. 健康の4大基盤 ＆ 提唱『運動寿命』 ＆ 論文エビデンス */}
+        <HealthFoundation
+          onSelectTerm={handleOpenTermModal}
+          onOpenPTModal={handleOpenPTModal}
+        />
+
+        {/* 4. Wikipedia風 基礎生理学・生化学メカニズム */}
         <PhysiologyBasics onSelectTerm={handleOpenTermModal} />
 
         {/* 4. 特許・共同研究・論文の完全解析（Google Patents原本リンク付） */}

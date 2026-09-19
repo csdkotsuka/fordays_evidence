@@ -24,7 +24,7 @@ export const EvidenceAssessment: React.FC<EvidenceAssessmentProps> = ({ onSelect
             客観的かつ真摯な検証
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            医療教育に22年携わってきた者として、都合の良いデータだけを並べることはいたしません。
+            医療・リハビリ教育に長く携わってきた専門職として、都合の良いデータだけを並べることはいたしません。
             どこが科学的に優れており、どこがまだ未解明・非実用的なのか、フェアに比較・整理します。
           </p>
         </div>

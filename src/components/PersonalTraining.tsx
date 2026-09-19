@@ -55,7 +55,7 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/20 border border-teal-400/30 text-teal-300 text-xs font-bold mb-3">
             <UserCheck className="w-4 h-4 text-teal-400" />
-            <span>理学療法士直伝 プログラム</span>
+            <span>リハビリ専門職による運動指導</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4 leading-tight">
             FORDAYS（栄養）× パーソナルトレーニング（運動）<br />
@@ -63,7 +63,7 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
           </h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
             自己流の筋トレで膝や腰を痛めていませんか？<br />
-            教員経験22年の理学療法士が、あなたの関節可動域や筋力バランスを評価し、無理なく一生動ける身体へ導きます。
+            長い教員・臨床経験をもつリハビリテーション専門家が、あなたの関節可動域や筋力バランスを評価し、無理なく運動寿命を伸ばす身体へ導きます。
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
         <div className="mb-12 rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl relative h-64 sm:h-72 w-full">
           <img
             src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80"
-            alt="理学療法士によるマンツーマン運動指導"
+            alt="リハビリ専門職によるマンツーマン運動指導"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent flex flex-col justify-center p-6 sm:p-10">
@@ -93,7 +93,7 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
               <ShieldCheck className="w-6 h-6" />
             </div>
             <h3 className="text-base font-bold text-white mb-2">
-              1. 医療職（理学療法士）だから安心
+              1. リハビリ専門職だから安心
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
               関節痛や腰痛、持病があっても大丈夫。解剖学・バイオメカニクスに基づき、関節に負担をかけない安全なフォームと負荷強度を厳密に設定します。
@@ -117,10 +117,10 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
               <Dumbbell className="w-6 h-6" />
             </div>
             <h3 className="text-base font-bold text-white mb-2">
-              3. 教員歴22年のわかりやすい伴走
+              3. 豊富な教育経験に基づくわかりやすい伴走
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              22年間で数百名の医療従事者を育ててきた指導力で、「なぜこの運動が必要なのか」を納得感を持って楽しく続けられるように伴走します。
+              長年にわたり多くの医療従事者を育成してきた指導力で、「なぜこの運動が必要なのか」を納得感を持って楽しく続けられるように伴走します。
             </p>
           </div>
         </div>

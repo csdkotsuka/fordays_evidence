@@ -19,14 +19,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPTModal }) => {
                 <span className="text-xl font-black tracking-tight text-white block">
                   FORDAYS<span className="text-cyan-400 text-sm font-semibold ml-1">EVIDENCE PORTAL</span>
                 </span>
-                <span className="text-xs text-slate-400">理学療法士・科学的エビデンス検証</span>
+                <span className="text-xs text-slate-400">リハビリ専門職・客観的エビデンス検証</span>
               </div>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-4 max-w-md">
-              教員歴22年の理学療法士が、FORDAYS（フォーデイズ）の核酸ドリンク・筋肉ケアサプリメントの特許、共同研究論文、基礎生理学メカニズムを学術的かつ誠実に検証した情報整理サイトです。
+              長年リハビリテーション教育と臨床に携わる専門職が、FORDAYS（フォーデイズ）の核酸ドリンク・筋肉ケアサプリメントの特許、共同研究論文、基礎生理学メカニズムを学術的かつ誠実に検証した情報整理サイトです。
             </p>
             <div className="flex items-center space-x-2 text-xs text-slate-500">
-              <span>監修: 理学療法士（教員歴22年）</span>
+              <span>監修: リハビリテーション専門職（教育・臨床経験）</span>
               <span>•</span>
               <span>更新: 2026年9月</span>
             </div>
@@ -35,7 +35,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPTModal }) => {
           <div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">サイトマップ</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#author" className="hover:text-cyan-400 transition-colors">理学療法士のスタンス</a></li>
+              <li><a href="#author" className="hover:text-cyan-400 transition-colors">執筆者のスタンス</a></li>
+              <li><a href="#health-pillars" className="hover:text-cyan-400 transition-colors">健康の4大基盤＆運動寿命</a></li>
               <li><a href="#physiology" className="hover:text-cyan-400 transition-colors">基礎生理学・メカニズム</a></li>
               <li><a href="#patents" className="hover:text-cyan-400 transition-colors">特許・共同研究（原本リンク）</a></li>
               <li><a href="#evidence" className="hover:text-cyan-400 transition-colors">エビデンスの強みと限界</a></li>

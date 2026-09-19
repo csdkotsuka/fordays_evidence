@@ -32,7 +32,7 @@ export const MuscleAndExercise: React.FC<MuscleAndExerciseProps> = ({ onSelectTe
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             フォーデイズの「BCAA & グルタミン DX」は素晴らしい配合設計です。
-            しかし、理学療法士として断言します。<strong className="text-slate-900 font-bold">筋肉に物理的な負荷（メカニカルストレス）をかけない限り、飲んだアミノ酸は筋線維になりません。</strong>
+            しかし、運動生理学およびリハビリ専門職として断言します。<strong className="text-slate-900 font-bold">筋肉に物理的な負荷（メカニカルストレス）をかけない限り、飲んだアミノ酸は筋線維になりません。</strong>
           </p>
         </div>
 
@@ -41,16 +41,16 @@ export const MuscleAndExercise: React.FC<MuscleAndExerciseProps> = ({ onSelectTe
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             <div className="lg:col-span-7 p-8 sm:p-10 md:p-12 space-y-4">
               <span className="text-xs font-bold px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 border border-orange-500/30 uppercase tracking-wider">
-                Physiology & Physical Therapy
+                Physiology & Exercise Science
               </span>
               <h3 className="text-2xl sm:text-3xl font-black leading-snug">
-                サプリ（栄養）× 毛細血管（核酸）× 運動（理学療法士）<br />
+                サプリ（栄養）× 毛細血管（核酸）× 運動（専門指導）<br />
                 <span className="text-orange-400">三位一体で初めて筋肉は目覚める</span>
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 アミノ酸をいくら補給しても、筋肉を動かさなければ「合成のスイッチ」はOFFのままです。
                 さらに、どんなに良い栄養も、微小毛細血管がゴースト化していれば筋細胞へ届きません。
-                <strong>「核酸ドリンクで毛細血管網を拓き、サプリで材料を満たし、パーソナルトレーニングで筋線維に点火する」</strong>——これこそが100歳まで歩ける身体をつくる最強の方程式です。
+                <strong>「核酸ドリンクで毛細血管網を拓き、サプリで材料を満たし、適切な運動負荷で筋線維に点火する」</strong>——これこそが100歳まで歩ける運動寿命をつくる最強の方程式です。
               </p>
             </div>
             <div className="lg:col-span-5 h-64 lg:h-full relative min-h-[260px]">
@@ -134,7 +134,7 @@ export const MuscleAndExercise: React.FC<MuscleAndExerciseProps> = ({ onSelectTe
             </div>
 
             <div className="mt-6 p-4 rounded-2xl bg-blue-50/80 border border-blue-200/80 text-xs text-blue-900">
-              <strong>理学療法士の判定：</strong>
+              <strong>専門職の判定：</strong>
               配合バランスは運動生理学的に極めて理にかなっています。顆粒タイプで持ち運びやすく、トレーニング30分前または運動直後の摂取に最適な設計です。
             </div>
           </div>
@@ -209,7 +209,7 @@ export const MuscleAndExercise: React.FC<MuscleAndExerciseProps> = ({ onSelectTe
                 onClick={onOpenPTModal}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-600 hover:text-orange-700 underline"
               >
-                <span>理学療法士の個別指導を見る</span>
+                <span>専門職の個別運動指導を見る</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -282,7 +282,7 @@ export const MuscleAndExercise: React.FC<MuscleAndExerciseProps> = ({ onSelectTe
                       <span>【要注意】サルコペニア（筋力低下）リスクが約6.6倍高くなっています</span>
                     </div>
                     <p className="text-slate-200 leading-relaxed text-xs">
-                      ふくらはぎの筋肉量が低下しているサインです。放置すると転倒や歩行速度低下のリスクが跳ね上がります。今すぐ<strong>「BCAA＋核酸による血流確保」と「理学療法士監修の筋トレ」</strong>を開始することをお勧めします。
+                      ふくらはぎの筋肉量が低下しているサインです。放置すると転倒や歩行速度低下のリスクが跳ね上がります。今すぐ<strong>「BCAA＋核酸による血流確保」と「専門指導に基づく適切な筋トレ」</strong>を開始することをお勧めします。
                     </p>
                   </div>
                 )}
@@ -316,7 +316,7 @@ export const MuscleAndExercise: React.FC<MuscleAndExerciseProps> = ({ onSelectTe
                     onClick={onOpenPTModal}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-400 text-slate-950 font-bold text-xs hover:bg-cyan-300 transition-colors"
                   >
-                    <span>理学療法士に運動メニューを無料相談する</span>
+                    <span>専門職に運動メニューを無料相談する</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>

@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPTModal }) => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/90 border border-slate-700/90 text-xs sm:text-sm text-cyan-300 backdrop-blur-md shadow-sm">
               <Award className="w-4 h-4 text-amber-400" />
-              <span>理学療法士・教員歴22年の専門職が徹底解剖</span>
+              <span>リハビリテーション専門職（長い教育・臨床経験）が徹底解剖</span>
             </div>
 
             {/* Main Title */}
@@ -35,16 +35,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPTModal }) => {
             <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               「数多くの特許や大学共同研究はあるが、本当に人体にどう良い影響があるのか？」<br />
               盲信でも頭ごなしの否定でもなく、生化学の基礎から特許原本・限界点までを客観的に精査。
-              確固たる論拠を持ち、<strong className="text-white font-semibold">「栄養補給 × 適切な運動負荷（理学療法）」</strong>で100歳まで動ける身体づくりを目指すための専門レポートです。
+              確固たる論拠を持ち、<strong className="text-white font-semibold">「健康の4大基盤 × 提唱『運動寿命』 × 栄養補給」</strong>で100歳まで動ける身体づくりを目指すための専門レポートです。
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <a
-                href="#patents"
+                href="#health-pillars"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 hover:from-cyan-300 hover:to-teal-200 transition-all shadow-lg shadow-cyan-500/20 hover:scale-105"
               >
-                <span>特許原本・共同研究データを検証</span>
+                <span>健康増進 ＆ 運動寿命の提唱を見る</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <button
@@ -52,7 +52,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPTModal }) => {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 transition-all shadow-lg hover:scale-105"
               >
                 <Dumbbell className="w-4 h-4 text-cyan-400" />
-                <span>PT無料個別相談・パーソナル指導</span>
+                <span>無料個別相談・運動指導</span>
               </button>
             </div>
 
@@ -67,8 +67,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPTModal }) => {
                 <span className="text-[11px] text-slate-400">一流大学共同研究</span>
               </div>
               <div>
-                <span className="text-2xl font-black text-white block">22<span className="text-emerald-400 text-sm">年</span></span>
-                <span className="text-[11px] text-slate-400">理学療法士・教育歴</span>
+                <span className="text-2xl font-black text-white block">教育<span className="text-emerald-400 text-sm">＆臨床</span></span>
+                <span className="text-[11px] text-slate-400">リハビリ専門職監修</span>
               </div>
             </div>
           </div>

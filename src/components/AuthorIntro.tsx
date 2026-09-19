@@ -17,7 +17,7 @@ export const AuthorIntro: React.FC = () => {
             <span>メッセージ ＆ 執筆の背景</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-            なぜ、理学療法士・教員歴22年の私が<br className="hidden sm:block" />
+            なぜ、リハビリテーションの専門家が<br className="hidden sm:block" />
             FORDAYSのエビデンスを精査するのか
           </h2>
           <p className="mt-3 text-slate-500 text-sm max-w-2xl mx-auto">
@@ -33,23 +33,23 @@ export const AuthorIntro: React.FC = () => {
               <div className="relative h-64 sm:h-72 w-full overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
-                  alt="理学療法士・医療現場でのリハビリテーション指導"
+                  alt="リハビリテーション・医療現場での指導"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
                   <span className="text-xs font-semibold uppercase tracking-wider text-cyan-300">
-                    Physical Therapist & Educator
+                    Rehabilitation Specialist & Educator
                   </span>
-                  <h3 className="text-xl font-bold mt-1">理学療法士（教員歴22年）</h3>
-                  <p className="text-xs text-slate-300 mt-1">解剖学・生理学・運動学・リハビリテーション教育</p>
+                  <h3 className="text-xl font-bold mt-1">リハビリテーション専門職</h3>
+                  <p className="text-xs text-slate-300 mt-1">長い教員・臨床経験をもとに人体の仕組みと健康を追求</p>
                 </div>
               </div>
 
               <div className="p-6 space-y-4">
                 <div className="grid grid-cols-2 gap-3 text-center">
                   <div className="p-3 rounded-2xl bg-cyan-50/70 border border-cyan-100">
-                    <span className="text-2xl font-black text-cyan-700 block">22年</span>
-                    <span className="text-xs text-slate-600 font-medium">医療教育・教員歴</span>
+                    <span className="text-2xl font-black text-cyan-700 block">教育＆臨床</span>
+                    <span className="text-xs text-slate-600 font-medium">長い経験と実績</span>
                   </div>
                   <div className="p-3 rounded-2xl bg-emerald-50/70 border border-emerald-100">
                     <span className="text-2xl font-black text-emerald-700 block">100%</span>
@@ -98,8 +98,8 @@ export const AuthorIntro: React.FC = () => {
                   「多くの人を健康にし、幸せにしたい」という強い願い
                 </h3>
                 <p className="text-slate-600 mt-2 text-sm">
-                  私は理学療法士として医療・リハビリの臨床現場に立ち、また22年間にわたり医療従事者を育成する教員として解剖学、生理学、運動学を教えてきました。
-                  これからFORDAYSの商品を活用し、より多くの人々の健康寿命を伸ばし、幸せな人生をサポートしたいと考えています。
+                  私はリハビリテーションの専門家として臨床現場に立ち、また長年にわたり医療従事者を育成する教員として解剖学、生理学、運動学を教えてきました。
+                  これからFORDAYSの商品を活用し、より多くの人々の健康寿命・運動寿命を伸ばし、幸せな人生をサポートしたいと考えています。
                 </p>
               </div>
             </div>
@@ -142,7 +142,7 @@ export const AuthorIntro: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span>栄養摂取と<strong>「理学療法士による運動負荷（メカニカルストレス）」の相乗効果</strong>を科学的に提案する</span>
+                  <span>栄養摂取と<strong>「専門指導による適切な運動負荷（メカニカルストレス）」の相乗効果</strong>を科学的に提案する</span>
                 </li>
               </ul>
             </div>

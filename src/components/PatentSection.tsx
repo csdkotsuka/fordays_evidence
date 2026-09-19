@@ -65,7 +65,7 @@ export const PatentSection: React.FC<PatentSectionProps> = ({ onSelectTerm }) =>
             <div className="space-y-4 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-300 text-xs font-bold">
                 <Award className="w-4 h-4 text-teal-400" />
-                <span>理学療法士として最も注目すべき共同研究 ＆ 査読論文</span>
+                <span>運動機能・リハビリの視点から最も注目すべき共同研究 ＆ 査読論文</span>
               </div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white leading-snug">
                 神戸大学 大学院保健学研究科 藤野英己教授との共同研究：<br />
@@ -404,7 +404,7 @@ export const PatentSection: React.FC<PatentSectionProps> = ({ onSelectTerm }) =>
                 </div>
 
                 <p className="text-xs text-slate-600 bg-slate-50 p-4 rounded-xl leading-relaxed">
-                  <strong>理学療法士の解説：</strong>
+                  <strong>専門職の解説：</strong>
                   運動すると筋肉内で大量のエネルギー（ATP）が消費され、同時に活性酸素が吹き出します。coreF-Revo.1は「エネルギーをつくりながら、細胞のサビを防ぐ」という理想的な生理学的環境を作り出すため、日々の疲れや筋疲労のリカバリーに極めて有用です。
                 </p>
               </div>
@@ -444,7 +444,7 @@ export const PatentSection: React.FC<PatentSectionProps> = ({ onSelectTerm }) =>
                   </div>
 
                   <p className="text-xs text-slate-600 bg-slate-50 p-4 rounded-xl leading-relaxed">
-                    <strong>理学療法士の解説：</strong>
+                    <strong>専門職の解説：</strong>
                     エストロゲン減少（閉経）によって19.3%まで痩せ細った真皮のコラーゲンが、核酸ドリンク摂取により34.1%へと有意に回復。コラーゲン線維は筋肉や腱、関節軟骨の主成分でもあり、全身の結合組織の柔軟性維持にも寄与します。
                   </p>
                 </div>
@@ -526,7 +526,7 @@ export const PatentSection: React.FC<PatentSectionProps> = ({ onSelectTerm }) =>
                   </div>
 
                   <div className="pt-3 border-t border-slate-100 text-[11px] text-slate-500">
-                    <strong>理学療法士の所見：</strong> {collab.significance}
+                    <strong>専門職の所見：</strong> {collab.significance}
                   </div>
                 </div>
               ))}

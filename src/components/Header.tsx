@@ -11,12 +11,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: '執筆の趣旨', href: '#author' },
+    { name: '執筆の想い', href: '#author' },
+    { name: '健康基盤＆運動寿命', href: '#health-pillars' },
     { name: '生理学基礎', href: '#physiology' },
     { name: '特許＆研究', href: '#patents' },
     { name: 'エビデンス検証', href: '#evidence' },
     { name: '筋肉×運動', href: '#muscle' },
-    { name: 'パーソナル指導', href: '#personal-training' },
+    { name: '運動指導相談', href: '#personal-training' },
   ];
 
   return (
@@ -34,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
                   FORDAYS エビデンス検証
                 </span>
                 <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-200 hidden sm:inline-block">
-                  理学療法士・教員22年
+                  リハビリ専門職の検証
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 hidden md:block">
