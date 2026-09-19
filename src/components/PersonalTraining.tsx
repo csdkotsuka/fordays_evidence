@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dumbbell, ShieldCheck, HeartPulse, UserCheck, Calendar, Send, CheckCircle2, MessageSquare, Phone, Clock, ArrowRight } from 'lucide-react';
 
 interface PersonalTrainingProps {
@@ -19,6 +19,24 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
     fordaysInterest: '興味がある・使ってみたい',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (!isModalOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onCloseModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isModalOpen, onCloseModal]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -112,9 +130,12 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
 
       {/* Modal Form */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in cursor-pointer"
+          onClick={onCloseModal}
+        >
           <div 
-            className="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative text-left"
+            className="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative text-left cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
             <button
