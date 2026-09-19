@@ -11,11 +11,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: '執筆の趣旨', href: '#author-intro' },
+    { name: '執筆の趣旨', href: '#author' },
     { name: '生理学基礎', href: '#physiology' },
     { name: '特許＆研究', href: '#patents' },
     { name: 'エビデンス検証', href: '#evidence' },
-    { name: '筋肉×運動', href: '#muscle-care' },
+    { name: '筋肉×運動', href: '#muscle' },
     { name: 'パーソナル指導', href: '#personal-training' },
   ];
 

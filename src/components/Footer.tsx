@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPTModal }) => {
               <li><a href="#author" className="hover:text-cyan-400 transition-colors">理学療法士のスタンス</a></li>
               <li><a href="#physiology" className="hover:text-cyan-400 transition-colors">基礎生理学・メカニズム</a></li>
               <li><a href="#patents" className="hover:text-cyan-400 transition-colors">特許・共同研究（原本リンク）</a></li>
-              <li><a href="#assessment" className="hover:text-cyan-400 transition-colors">エビデンスの強みと限界</a></li>
+              <li><a href="#evidence" className="hover:text-cyan-400 transition-colors">エビデンスの強みと限界</a></li>
               <li><a href="#muscle" className="hover:text-cyan-400 transition-colors">筋肉ケアと運動負荷の重要性</a></li>
               <li>
                 <button

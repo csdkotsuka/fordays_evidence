@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Dna, RefreshCw, Zap, Activity, Info, Sparkles, ArrowRight } from 'lucide-react';
+import { Dna, RefreshCw, Zap, Activity, Info, Sparkles, ArrowRight, ShieldCheck, ArrowDown } from 'lucide-react';
 import { TERMS } from '@/data/terms';
 
 interface PhysiologyBasicsProps {
@@ -12,25 +12,25 @@ export const PhysiologyBasics: React.FC<PhysiologyBasicsProps> = ({ onSelectTerm
   const TermButton = ({ id, label }: { id: string; label: string }) => (
     <button
       onClick={() => onSelectTerm(id)}
-      className="inline-flex items-center gap-1 px-2 py-0.5 mx-1 rounded bg-brand-50 hover:bg-brand-100 text-brand-700 font-medium text-xs sm:text-sm border border-brand-200 transition-colors cursor-pointer group"
+      className="inline-flex items-center gap-1 px-2.5 py-0.5 mx-1 rounded-lg bg-cyan-50 hover:bg-cyan-100 text-cyan-800 font-bold text-xs sm:text-sm border border-cyan-200 transition-all cursor-pointer group shadow-sm hover:scale-105 active:scale-95"
       title="クリックしてWikipedia風解説を表示"
     >
-      <Info className="w-3 h-3 text-brand-500 group-hover:text-brand-700" />
-      <span className="underline decoration-dotted decoration-brand-400">{label}</span>
+      <Info className="w-3 h-3 text-cyan-600 group-hover:text-cyan-800" />
+      <span className="underline decoration-cyan-400 font-bold">{label}</span>
     </button>
   );
 
   return (
-    <section id="physiology" className="py-20 bg-slate-50 border-b border-slate-200">
+    <section id="physiology" className="scroll-mt-16 py-20 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-100 border border-cyan-200 text-cyan-800 text-xs font-semibold mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-100 border border-cyan-200 text-cyan-800 text-xs font-bold mb-3">
             <Dna className="w-4 h-4 text-cyan-600" />
             <span>生化学 ＆ 生理学の基礎知識</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-            「飲んだDNAが遺伝子を治す」は本当か？<br />
+            「飲んだDNAが傷ついた遺伝子を治す」は本当か？<br />
             生化学の基本から理解する核酸の真実
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -42,12 +42,12 @@ export const PhysiologyBasics: React.FC<PhysiologyBasicsProps> = ({ onSelectTerm
         {/* 3 Core Scientific Concepts */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {/* Card 1: What is Nucleic Acid */}
-          <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-slate-200 flex flex-col justify-between">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200/90 flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-5 border border-brand-100">
+              <div className="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-5 border border-cyan-100 shadow-sm">
                 <Dna className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+              <h3 className="text-lg font-extrabold text-slate-900 mb-3 flex items-center gap-2">
                 1. 核酸（DNA & RNA）とは何か
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed mb-4">
@@ -56,135 +56,159 @@ export const PhysiologyBasics: React.FC<PhysiologyBasicsProps> = ({ onSelectTerm
                 <strong>RNA（リボ核酸）</strong>の総称です。
                 最小単位は塩基・糖・リン酸から成る<TermButton id="nucleotide" label="ヌクレオチド" />です。
               </p>
-              <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1.5">
-                <div className="font-semibold text-slate-800 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
-                  一般的な誤解の訂正
+              <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs text-slate-600 space-y-1.5">
+                <div className="font-bold text-slate-800 flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-cyan-600" />
+                  <span>俗説と科学的ファクトの違い</span>
                 </div>
                 <p>
-                  「核酸ドリンクを飲むと、サケのDNAが傷ついた自分のDNAに直接パッチを当てるように置き換わる」という俗説は生化学的に誤りです。高分子DNAはそのままでは細胞内に入りません。
+                  ×「サケのDNAがそのままヒトの傷ついたDNAを直接修復する」<br />
+                  ○「消化管でヌクレオシド・塩基まで分解・吸収された後、体内の<strong>サルベージ合成経路</strong>で材料として再利用される」
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="text-slate-500">関連キーワード</span>
-              <button 
-                onClick={() => onSelectTerm('nucleic_acid')}
-                className="text-brand-600 font-semibold hover:text-brand-800 flex items-center gap-1"
-              >
-                事典を見る <ArrowRight className="w-3 h-3" />
-              </button>
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>重要ワード:</span>
+              <div className="flex gap-1">
+                <TermButton id="nucleotide" label="ヌクレオチド" />
+                <TermButton id="nucleoside" label="ヌクレオシド" />
+              </div>
             </div>
           </div>
 
-          {/* Card 2: De Novo vs Salvage */}
-          <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-slate-200 flex flex-col justify-between">
+          {/* Card 2: De Novo vs Salvage Synthesis */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200/90 flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 border border-emerald-100">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-5 border border-emerald-100 shadow-sm">
                 <RefreshCw className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                2. 「デノボ合成」vs「サルベージ合成」
+              <h3 className="text-lg font-extrabold text-slate-900 mb-3 flex items-center gap-2">
+                2. デノボ合成 vs サルベージ合成
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                体内での核酸合成には、肝臓でアミノ酸などから大量のエネルギーを消費してゼロから作る
-                <TermButton id="denovo" label="デノボ合成" />と、食事や分解物を再利用して手軽に合成する
-                <TermButton id="salvage" label="サルベージ合成" />の2大経路があります。
+                体内での核酸合成には、アミノ酸などから大量のエネルギーを使ってゼロから作る
+                <TermButton id="denovo" label="デノボ合成" />と、食事や分解された塩基を再利用する省エネの
+                <TermButton id="salvage" label="サルベージ合成" />があります。
               </p>
-              <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1.5">
-                <div className="font-semibold text-slate-800 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                  なぜ経口摂取に意味があるのか？
+              <div className="bg-emerald-50/70 p-4 rounded-2xl border border-emerald-200 text-xs text-emerald-950 space-y-1.5">
+                <div className="font-bold text-emerald-800 flex items-center gap-1.5">
+                  <Activity className="w-4 h-4" />
+                  <span>なぜ加齢や運動で核酸が必要か？</span>
                 </div>
-                <p>
-                  20代以降、肝臓のデノボ合成能力は著しく衰退します。消化管でヌクレオチドや塩基に分解・吸収された核酸は、エネルギー消費の少ない「サルベージ経路」の即戦力原料となり、細胞修復を迅速化します。
+                <p className="leading-relaxed">
+                  肝機能の低下（20代をピークに衰退）や激しい運動・加齢ストレスにより、体内のデノボ合成能力は低下します。経口で核酸を補うことで、肝臓に負担をかけず効率的な組織修復が可能になります。
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="text-slate-500">関連キーワード</span>
-              <button 
-                onClick={() => onSelectTerm('salvage')}
-                className="text-emerald-600 font-semibold hover:text-emerald-800 flex items-center gap-1"
-              >
-                事典を見る <ArrowRight className="w-3 h-3" />
-              </button>
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>重要ワード:</span>
+              <div className="flex gap-1">
+                <TermButton id="salvage" label="サルベージ経路" />
+                <TermButton id="atp" label="ATP" />
+              </div>
             </div>
           </div>
 
-          {/* Card 3: ATP & Recycling */}
-          <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-slate-200 flex flex-col justify-between">
+          {/* Card 3: Capillary & Muscle Regeneration */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200/90 flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center mb-5 border border-indigo-100 shadow-sm">
                 <Zap className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                3. ATP産生と生体内リサイクル
+              <h3 className="text-lg font-extrabold text-slate-900 mb-3 flex items-center gap-2">
+                3. 毛細血管新生と筋肉の再生
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                細胞内のエネルギー通貨である<TermButton id="atp" label="ATP" />は
-                <TermButton id="mitochondria" label="ミトコンドリア" />で作られます。
-                また細胞内を清掃する<TermButton id="autophagy" label="オートファジー" />や
-                <TermButton id="proteasome" label="プロテアソーム" />などの分解リサイクル機構が細胞若返りの要です。
+                理学療法士として最も着目すべきは、酵素分解核酸が
+                <TermButton id="capillary" label="毛細血管新生" />を促す点です。
+                血管内皮増殖因子（VEGF）を介して筋肉内の微小循環網を拡張します。
               </p>
-              <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1.5">
-                <div className="font-semibold text-slate-800 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
-                  フォーデイズ独自知見
+              <div className="bg-indigo-50/70 p-4 rounded-2xl border border-indigo-200 text-xs text-indigo-950 space-y-1.5">
+                <div className="font-bold text-indigo-800 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4" />
+                  <span>血流なくして筋肉はつかない</span>
                 </div>
-                <p>
-                  DNAとRNAの協調添加により細胞のATP産生が増加し、白子抽出物がオートファジー等の分解系を刺激して不良ミトコンドリアの浄化を促すことが特許（第7627991号）で示されています。
+                <p className="leading-relaxed">
+                  加齢や不活動でゴースト化した毛細血管を再開通させることで、摂取した
+                  <TermButton id="bcaa" label="BCAA" />や酸素が骨格筋へスムーズに届けられます。
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="text-slate-500">関連キーワード</span>
-              <button 
-                onClick={() => onSelectTerm('autophagy')}
-                className="text-amber-600 font-semibold hover:text-amber-800 flex items-center gap-1"
-              >
-                事典を見る <ArrowRight className="w-3 h-3" />
-              </button>
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>重要ワード:</span>
+              <div className="flex gap-1">
+                <TermButton id="capillary" label="毛細血管" />
+                <TermButton id="sarcopenia" label="サルコペニア" />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Interactive Keywords Grid */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <div>
-              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-brand-600" />
-                <span>生理学・生化学 Wikipedia風 用語集</span>
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-500 mt-1">
-                気になる用語をクリックすると、いつでも詳細な定義・生体内役割・栄養的意義がポップアップします。
-              </p>
-            </div>
-            <span className="text-xs text-slate-400 font-mono">全16項目 収録</span>
+        {/* Visual Diagram: De Novo vs Salvage Flowchart */}
+        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200 shadow-lg">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <span className="text-xs font-bold px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 uppercase tracking-wider">
+              Biochemical Flowchart
+            </span>
+            <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-2">
+              図解：生体内における2大核酸合成経路の比較
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+              なぜ経口摂取によるサルベージ合成経路が「体の省エネと若々しさ」に直結するのか
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            {Object.values(TERMS).map((item) => (
-              <button
-                key={item.id}
-                onClick={() => onSelectTerm(item.id)}
-                className="text-left p-3 rounded-xl bg-slate-50 hover:bg-brand-50/80 hover:border-brand-300 border border-slate-200/80 transition-all hover:shadow-sm group"
-              >
-                <div className="text-[10px] font-semibold text-brand-600 mb-0.5">
-                  {item.category}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {/* Left: De Novo Path */}
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+              <div className="flex items-center justify-between">
+                <h4 className="font-bold text-slate-900 text-sm sm:text-base">① デノボ合成経路（自給自足）</h4>
+                <span className="text-[11px] font-bold px-2.5 py-0.5 rounded bg-slate-200 text-slate-700">高エネルギー消費</span>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                アミノ酸（グルタミン、グリシン、アスパラギン酸）や糖を材料として、肝臓でゼロからヌクレオチドを合成する経路。
+              </p>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 bg-white rounded-xl border border-slate-200">
+                  <strong className="text-slate-800 block mb-0.5">原料: 食事のアミノ酸・糖・リン酸</strong>
+                  <span className="text-slate-500">多段階の複雑な酵素反応と大量のATP（エネルギー）を消費</span>
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-700 truncate">
-                  {item.name}
+                <div className="flex justify-center text-slate-400">
+                  <ArrowDown className="w-4 h-4" />
                 </div>
-                <div className="text-[11px] text-slate-500 line-clamp-1 mt-1">
-                  {item.shortDesc}
+                <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-rose-900">
+                  <strong className="block mb-0.5">【加齢・ストレスによる弱点】</strong>
+                  20代を境に肝機能とともに合成力が年々低下。激しい運動や疾病時には材料が枯渇し、疲労回復が遅れます。
                 </div>
-              </button>
-            ))}
+              </div>
+            </div>
+
+            {/* Right: Salvage Path */}
+            <div className="p-6 rounded-2xl bg-cyan-50/70 border border-cyan-200 space-y-4">
+              <div className="flex items-center justify-between">
+                <h4 className="font-bold text-cyan-950 text-sm sm:text-base">② サルベージ合成経路（省エネ再利用）</h4>
+                <span className="text-[11px] font-bold px-2.5 py-0.5 rounded bg-cyan-600 text-white shadow-sm">FORDAYSの狙い</span>
+              </div>
+              <p className="text-xs text-cyan-900 leading-relaxed">
+                食事から摂取したヌクレオシドや塩基をそのまま再利用し、わずかなエネルギーでDNA/RNAを素早く再構築する経路。
+              </p>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 bg-white rounded-xl border border-cyan-200">
+                  <strong className="text-cyan-950 block mb-0.5">原料: 核酸ドリンク（サケ白子・酵母抽出物）</strong>
+                  <span className="text-slate-600">低分子化された塩基・ヌクレオシドが小腸からスムーズに吸収</span>
+                </div>
+                <div className="flex justify-center text-cyan-600">
+                  <ArrowDown className="w-4 h-4" />
+                </div>
+                <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-950">
+                  <strong className="block mb-0.5">【大きなメリット】</strong>
+                  肝臓に無駄な負担をかけず、骨髄や小腸、傷ついた筋肉組織など細胞分裂の活発な場所へ即座に供給されます。
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

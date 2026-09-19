@@ -9,7 +9,9 @@ interface EvidenceAssessmentProps {
 
 export const EvidenceAssessment: React.FC<EvidenceAssessmentProps> = ({ onSelectTerm }) => {
   return (
-    <section id="evidence" className="py-20 bg-slate-50 border-b border-slate-200">
+    <section id="evidence" className="scroll-mt-16 py-20 bg-slate-50 border-b border-slate-200">
+      {/* 互換用アンカー */}
+      <div id="assessment" className="scroll-mt-16" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

@@ -45,7 +45,7 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
   };
 
   return (
-    <section id="personal-training" className="py-20 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white relative overflow-hidden">
+    <section id="personal-training" className="scroll-mt-16 py-20 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -65,6 +65,25 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
             自己流の筋トレで膝や腰を痛めていませんか？<br />
             教員経験22年の理学療法士が、あなたの関節可動域や筋力バランスを評価し、無理なく一生動ける身体へ導きます。
           </p>
+        </div>
+
+        {/* Visual Banner Photo */}
+        <div className="mb-12 rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl relative h-64 sm:h-72 w-full">
+          <img
+            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80"
+            alt="理学療法士によるマンツーマン運動指導"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent flex flex-col justify-center p-6 sm:p-10">
+            <span className="text-xs font-bold text-teal-300 uppercase tracking-wider mb-2">Medical × Fitness Synergy</span>
+            <h3 className="text-xl sm:text-2xl font-black text-white max-w-lg leading-snug">
+              自己流の筋トレは今日で卒業。<br />
+              医学的根拠に基づくオーダーメイド指導
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 mt-2 max-w-md">
+              痛みの出ないフォーム、サプリ摂取のベストタイミング、自宅でできる習慣づくりまで徹底サポートします。
+            </p>
+          </div>
         </div>
 
         {/* 3 Strong Advantages of PT Personal Training */}

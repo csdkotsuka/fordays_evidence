@@ -11,6 +11,7 @@ export interface PatentItem {
   category: '抗酸化・細胞修復' | '脳・神経' | '筋肉・血流' | '代謝・抗肥満' | '皮膚・美容' | 'その他';
   summary: string;
   scientificContext: string;
+  productImpact: string; // 商品にどう良い影響を及ぼしているか
   googlePatentsUrl: string;
   status: '登録済' | '存続期間満了' | '出願中';
 }
@@ -29,7 +30,8 @@ export const PATENTS: PatentItem[] = [
     category: '抗酸化・細胞修復',
     summary: 'サケ白子抽出物の摂取による酸化ストレス抑制効果において、酸化メチオニン修復酵素遺伝子発現の増加による体内の酸化タンパク質の修復が関与していることを見出しました。',
     scientificContext: '加齢や運動ストレスで蓄積する酸化変性タンパク質を、遺伝子レベルで修復する酵素（MsrAなど）の活性化を促す作用機序が示されています。',
-    googlePatentsUrl: 'https://patents.google.com/patent/JP7857645B2/ja',
+    productImpact: '最新世代の核酸ドリンク（ナチュラル DNコラーゲン）に配合。単なる栄養補給にとどまらず、紫外線や激しい運動で傷ついた体内のタンパク質を修復する「抗酸化・抗疲労」の学術的裏付けとなっています。',
+    googlePatentsUrl: 'https://patents.google.com/?q=7857645&country=JP',
     status: '登録済'
   },
   {
@@ -45,7 +47,8 @@ export const PATENTS: PatentItem[] = [
     category: '皮膚・美容',
     summary: '卵巣摘出による閉経モデルラットにおいて、エストロゲン低下に伴う表皮の肥厚化を有意に抑制し、真皮中のコラーゲン染色面積を増加（19.3%→34.1%）させることを確認。Fcore-2021配合核酸ドリンクとしての特許性を取得。',
     scientificContext: '更年期・加齢による皮膚弾力性低下や構造劣化に対する栄養介入の新規性。外用だけでなく経口摂取による真皮結合組織サポートを示しています。',
-    googlePatentsUrl: 'https://patents.google.com/patent/JP7710217B2/ja',
+    productImpact: '第9世代以降の核酸ドリンクに配合された独自開発DNA素材「FCore-2021」に直結。年齢とともに失われがちな肌の弾力維持や更年期以降の肌荒れ・ゴワつきを防ぐ美容エビデンスです。',
+    googlePatentsUrl: 'https://patents.google.com/?q=7710217&country=JP',
     status: '登録済'
   },
   {
@@ -61,7 +64,8 @@ export const PATENTS: PatentItem[] = [
     category: '抗酸化・細胞修復',
     summary: '魚類白子の酵素処理物（サケ白子抽出物）の摂取により、細胞内成分・小器官の分解系であるプロテアソーム、オートファジー、アポトーシスといった生体内リサイクリング機構を活性化し、不良ミトコンドリア等の除去を促進。',
     scientificContext: '細胞が自らを浄化・刷新するオートファジー機構の亢進。老廃物の蓄積を防ぎ、細胞の恒常性を維持するアンチエイジングの根幹作用です。',
-    googlePatentsUrl: 'https://patents.google.com/patent/JP7627991B2/ja',
+    productImpact: '核酸ドリンク摂取により、体内の古くなった細胞小器官（傷ついたミトコンドリアなど）をリサイクルするオートファジーを活性化。「翌朝すっきり起きられる」「体が軽くなる」といった体感の生理学的基盤となっています。',
+    googlePatentsUrl: 'https://patents.google.com/?q=7627991&country=JP',
     status: '登録済'
   },
   {
@@ -77,6 +81,7 @@ export const PATENTS: PatentItem[] = [
     category: '脳・神経',
     summary: '先行特許第7284955号で発見した「末端リン酸除去トリヌクレオチドCCC」などについて、新規化学物質としての物質特許を取得。',
     scientificContext: '特定の配列（シトシン3連鎖：CCC）を持つ低分子オリゴヌクレオチドが海馬の神経幹細胞に特異的に作用することを発見した画期的な物質特許です。',
+    productImpact: 'サケ白子抽出物を特殊酵素分解することで「CCC配列」を安定的に含有させる独自製法を確立。脳の記憶・学習中枢（海馬）を支える高付加価値成分としてドリンクや脳活サプリに応用されています。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP7554420B2/ja',
     status: '登録済'
   },
@@ -93,6 +98,7 @@ export const PATENTS: PatentItem[] = [
     category: '筋肉・血流',
     summary: '酵素分解核酸（DNA）が血管内皮増殖因子（VEGF）やミトコンドリア機能関連タンパク質（PGC-1α等）を増加させ、ラットの骨格筋において「運動を伴わずに毛細血管新生を促進する」作用を確認。',
     scientificContext: '理学療法士・リハビリテーション分野の世界的権威である藤野教授との共同研究。筋肉への血流供給網を増やし、筋萎縮予防や運動持久力向上の基盤となる重要知見です。',
+    productImpact: '核酸ドリンクの最大の強み。筋肉への酸素・栄養デリバリーを担う毛細血管を豊かにするため、「冷えの改善」「足のつり予防」、そしてパーソナルトレーニングによる筋肉づくりの土台として極めて高い相乗効果を発揮します。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP7411938B2/ja',
     status: '登録済'
   },
@@ -107,8 +113,9 @@ export const PATENTS: PatentItem[] = [
     institution: '岐阜大学',
     type: '用途特許',
     category: '代謝・抗肥満',
-    summary: 'サケ白子中の核タンパク質プロタミン由来の加水分解物「トリペプチドRPR（アルギニン-プロリン-アルギニン）」が、強力な抗肥満効果および血清総コレステロール低下作用を有することを発見。',
-    scientificContext: '食品由来の特定のペプチド配列が生体内の脂質代謝系に働きかける機序を解明。メタボリックシンドローム予防への寄与が期待されます。',
+    summary: 'サケ白子中のタンパク質（プロタミン）の加水分解物に含まれる「トリペプチドRPR（アルギニン-プロリン-アルギニン）」が、高脂肪食負荷マウスにおいて体重増加抑制、血中コレステロール低下、肝臓脂質低減をもたらすことを同定。',
+    scientificContext: '核酸素材精製時の副産物とされてきたプロタミンから、高い生理活性を持つ特定機能ペプチドを見出した産学連携の成果です。',
+    productImpact: '核酸ドリンクに豊富に含まれるサケ白子由来プロタミン加水分解ペプチドの機能性。糖質や脂質をエネルギーに変換しやすい代謝環境をつくり、太りにくい身体づくりを後押しします。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP7291917B2/ja',
     status: '登録済'
   },
@@ -123,8 +130,9 @@ export const PATENTS: PatentItem[] = [
     institution: '金沢大学',
     type: '用途特許',
     category: '脳・神経',
-    summary: 'サケ白子由来DNA中から同定した「トリヌクレオチドCCC」を機能性成分とし、記憶や学習能を司る脳海馬の神経幹細胞の増殖を促進することを確認。',
-    scientificContext: '成人脳においても神経新生（ニューロジェネシス）が生じる海馬歯状回にアプローチし、加齢に伴う認知機能低下の予防に示唆を与える用途特許。',
+    summary: 'サケ白子由来DNAの特定断片（トリヌクレオチドCCC等）が、成体マウス海馬の神経前駆細胞を増殖させ、神経新生（ニューロン新生）を有意に促進することを確認。',
+    scientificContext: 'かつて「大人になると増えない」と信じられていた海馬の脳神経細胞が、食事由来の低分子核酸によって新生・賦活化されることを証明しました。',
+    productImpact: '加齢に伴う物忘れや集中力の低下が気になる世代に向けた、脳機能維持・認知機能サポートの確固たる科学的エビデンスとなっています。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP7284955B2/ja',
     status: '登録済'
   },
@@ -135,12 +143,13 @@ export const PATENTS: PatentItem[] = [
     title: '蛋白質含有酸性飲料の製造方法',
     registeredDate: '2022年4月5日',
     applicationDate: '2018年8月7日',
-    collaborator: '株式会社エル・エスコ―ポレーション',
+    collaborator: '株式会社エル・エスコポレーション',
     institution: '共同出願',
     type: '製法特許',
     category: 'その他',
-    summary: '水溶性核酸やコラーゲンなどのタンパク質を含む酸性健康飲料において、長期保管環境下（冷蔵〜37℃等）での沈殿・凝集を顕著に抑制する独自の安定化製造技術。',
-    scientificContext: 'サプリメントとしての品質保持・製品の均一性と吸収性を長期間維持するための基盤工学特許です。',
+    summary: 'タンパク質（コラーゲンペプチド等）と核酸を含有する酸性飲料において、低温（3℃）から高温（37℃）までの過酷な保存環境下でも、凝集・沈殿を生じさせず長期安定（6ヶ月以上）を維持する画期的な製造技術。',
+    scientificContext: '酸性域で凝集しやすいタンパク質と水溶性核酸を、化学合成添加物に頼らず物理化学的に安定分散させる高度な食品工学特許。',
+    productImpact: '「ナチュラル DNコラーゲン」の美味しさと長期品質保持を実現。防腐剤などを極力使わず、サラリとした飲みやすさを冷蔵・常温問わず保つための不可欠な製造コア技術です。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP7054193B2/ja',
     status: '登録済'
   },
@@ -157,7 +166,8 @@ export const PATENTS: PatentItem[] = [
     category: 'その他',
     summary: '試料中の核酸成分（DNA・RNA由来ヌクレオチド、ヌクレオシド、遊離塩基）を逆相カラムを用いた1回のHPLC分析によって高精度に一括定量する分析法。',
     scientificContext: '品質管理や学術実験において、原材料および体内代謝物中の微量核酸成分を厳密に同定・規格化するための測定基盤技術。',
-    googlePatentsUrl: 'https://patents.google.com/patent/JP6660994B2/ja',
+    productImpact: 'フォーデイズ品質管理センターでの徹底したロット管理に直結。天然由来原料（サケ白子や酵母）でも、商品1本ごとの活性成分量を正確に数値管理できるため、いつでも均一な高品質ドリンクをお届けできます。',
+    googlePatentsUrl: 'https://patents.google.com/patent/JP6660994B1/ja',
     status: '登録済'
   },
   {
@@ -167,12 +177,12 @@ export const PATENTS: PatentItem[] = [
     title: '食品組成物',
     registeredDate: '2019年3月22日',
     applicationDate: '2017年10月2日',
-    collaborator: 'フォーデイズ独自開発',
-    institution: '自社開発',
+    institution: 'フォーデイズ独自出願',
     type: '用途特許',
-    category: '抗酸化・細胞修復',
-    summary: 'ベニクスノキタケ抽出物とナリネ菌（乳酸菌）を特定比率で含有することで、生体防御・免疫機能を相乗的に正常化・増進させる組成物。',
-    scientificContext: '腸内フローラと自然免疫系のバランスを整え、外敵に対する生体恒常性を維持することを目的とした配合特許です。',
+    category: 'その他',
+    summary: 'ベニクスノキタケ（紅豆杉類似の希少キノコ）抽出物とナリネ菌（有益乳酸菌株）の組み合わせにより、免疫細胞のバランスを整え、生体防御機能を正常化する複合食品組成物。',
+    scientificContext: '単一成分ではなく、複数のバイオ素材の相乗効果（腸管免疫賦活）に着目した機能性特許。',
+    productImpact: 'フォーデイズの免疫系プレミアムサプリメントに活用。腸内環境の正常化と全身の免疫コンディション維持を科学的にサポートします。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP6499740B2/ja',
     status: '登録済'
   },
@@ -183,12 +193,12 @@ export const PATENTS: PatentItem[] = [
     title: '癌細胞増殖抑制剤並びに健康食品',
     registeredDate: '2017年6月9日',
     applicationDate: '2013年2月8日',
-    collaborator: 'フォーデイズ学術研究',
-    institution: '学術研究成果',
+    institution: 'フォーデイズ独自出願',
     type: '用途特許',
     category: '抗酸化・細胞修復',
-    summary: '鮭白子を酵素低分子化して得られる水溶性核酸分解生成物が、複数の培養癌細胞株に対して特異的に増殖抑制効果を示すことを見出しました。',
-    scientificContext: '※培養細胞（in vitro）レベルでの基礎実験所見。生体内で抗がん剤のように働くわけではなく、細胞増殖制御シグナルへの影響を調査した学術的用途特許です。',
+    summary: 'サケ白子を低分子化して得られる水溶性核酸分解生成物が、複数の培養癌細胞株においてアポトーシスを誘導し、増殖を抑制することを確認。',
+    scientificContext: '※注意：本特許は試験管内（in vitro）での細胞株試験に基づくものであり、人体における抗癌効果を保証するものではありません（学術的スクリーニング段階）。',
+    productImpact: '白子酵素分解物の細胞生理学的安全性と特異なバイオ活性をスクリーニングした基礎研究。製品開発における「低分子化核酸の細胞への作用」の出発点となった歴史的特許です。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP6153736B2/ja',
     status: '登録済'
   },
@@ -199,12 +209,12 @@ export const PATENTS: PatentItem[] = [
     title: 'システインペプチド含有健康飲料',
     registeredDate: '2017年5月12日',
     applicationDate: '2012年10月11日',
-    collaborator: 'フォーデイズ独自開発',
-    institution: '海外特許展開（韓国でも特許取得）',
+    institution: 'フォーデイズ独自出願',
     type: '用途特許',
-    category: '抗酸化・細胞修復',
-    summary: '水溶性核酸・コラーゲン飲料にシステインペプチドを配合。若さ・活力の指標とされるホルモン「DHEA-S」の血中濃度を有意に増加させ、全身の健康度・自覚的活力を改善することを確認。',
-    scientificContext: '強力な抗酸化物質グルタチオンの前駆体であるシステインと核酸の相乗効果に着目。ホルモンバランスと疲労感の改善指標が示されています。',
+    category: '皮膚・美容',
+    summary: '水溶性核酸・コラーゲンに加え、システインペプチド（グルタチオン前駆体）を配合した飲料の摂取により、抗老化ホルモン指標とされる血中DHEA-S濃度の上昇や自覚的疲労感の改善を確認。韓国でも特許取得（第1016562240000号）。',
+    scientificContext: '抗酸化物質グルタチオンの体内生合成を促すアミノ酸ネットワークと核酸の相乗効果を検証した臨床データ。',
+    productImpact: '核酸ドリンクの配合設計（システインペプチド、ビタミンC・B群の組み合わせ）の基盤。体内のグルタチオン合成を促し、内側からの透明感とスタミナを支えています。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP6138048B2/ja',
     status: '登録済'
   },
@@ -215,12 +225,12 @@ export const PATENTS: PatentItem[] = [
     title: 'アミロイド線維の形成を伴う神経変性疾患の予防・改善薬',
     registeredDate: '2015年10月9日',
     applicationDate: '2011年2月17日',
-    collaborator: 'フォーデイズ学術研究',
-    institution: '学術研究成果',
+    institution: 'フォーデイズ独自出願',
     type: '用途特許',
     category: '脳・神経',
-    summary: '核タンパク質成分がアルツハイマー病の原因物質とされるアミロイドβペプチド線維の凝集・形成を阻害し、中脳黒質におけるドーパミン神経細胞の脱落を抑制することを発見。',
-    scientificContext: '神経細胞の凝集性ストレスに対する保護作用。基礎研究段階での神経変性抑制作用機序を示した特許です。',
+    summary: '核タンパク質成分がアミロイドβペプチドの凝集・線維化を阻害し、中脳黒質のドーパミン神経細胞の脱落を保護する作用を検証。アルツハイマー病やパーキンソン病の病態予防に関する用途特許。',
+    scientificContext: '神経変性の主要因である異常タンパク質凝集に対する核タンパク質のシャペロン様保護作用を示唆。',
+    productImpact: '脳の健康維持に対するアプローチの基盤。核酸のみならず、白子に含まれる複合核タンパク質が持つ神経保護ポテンシャルを証明した特許です。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP5820127B2/ja',
     status: '登録済'
   },
@@ -231,12 +241,13 @@ export const PATENTS: PatentItem[] = [
     title: '水溶性核蛋白入り健康ドリンク',
     registeredDate: '2007年1月12日',
     applicationDate: '2002年5月10日',
-    collaborator: '株式会社エル・エスコーポレーション',
-    institution: '第一世代基礎特許',
-    type: '製法特許',
-    category: 'その他',
-    summary: '魚の白子中の高分子で不溶性の核タンパク質を酵素加水分解によって低分子化・水溶性化し、消化吸収に優れた健康ドリンクとして安定配合する技術。',
-    scientificContext: 'フォーデイズ核酸ドリンクの原点となる技術。本来消化吸収しにくい白子核酸を日常的に飲用可能にしたエポックメイキングな特許（現在は20年の存続期間満了）。',
+    collaborator: '株式会社エル・エスコポレーション',
+    institution: '共同出願',
+    type: '用途特許',
+    category: '抗酸化・細胞修復',
+    summary: '不溶性であったサケ白子核タンパク質を低分子・水溶性化し、アルギニンに富む良質タンパク質と核酸を同時に消化吸収できるドリンク形態を確立したフォーデイズの原点特許（日本・中国・韓国で成立、存続期間満了）。',
+    scientificContext: 'フォーデイズが20年以上にわたり核酸ドリンクのパイオニアとして市場をリードする礎となった歴史的特許。',
+    productImpact: '「ナチュラル DNコラーゲン」のすべての原点。魚類白子を水溶性化して美味しく飲める技術を世界に先駆けて開発した、フォーデイズの創業の証です。',
     googlePatentsUrl: 'https://patents.google.com/patent/JP3899436B2/ja',
     status: '存続期間満了'
   }
