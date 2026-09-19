@@ -11,13 +11,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: '執筆の想い', href: '#author' },
-    { name: '健康基盤＆運動寿命', href: '#health-pillars' },
-    { name: '生理学基礎', href: '#physiology' },
-    { name: '特許＆研究', href: '#patents' },
-    { name: 'エビデンス検証', href: '#evidence' },
-    { name: '筋肉×運動', href: '#muscle' },
-    { name: '運動指導相談', href: '#personal-training' },
+    { name: '健康基盤＆運動寿命', href: '/#health-pillars' },
+    { name: '特許＆研究', href: '/#patents' },
+    { name: '筋肉×運動', href: '/#muscle' },
+    { name: '運動処方学', href: '/exercise-prescription' },
+    { name: '運動指導相談', href: '/#personal-training' },
   ];
 
   return (
@@ -25,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo & Title */}
-          <a href="#" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-teal-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
               <ShieldCheck className="w-6 h-6" />
             </div>

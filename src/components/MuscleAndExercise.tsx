@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { 
   Dumbbell, Flame, HeartPulse, CheckCircle2, AlertCircle, Sparkles, 
-  ArrowRight, Activity, HelpCircle, Zap, Shield, ChevronRight, Target
+  ArrowRight, Activity, HelpCircle, Zap, Shield, ChevronRight, Target,
+  Timer, Footprints, CheckSquare, ArrowUpRight, ShieldAlert, Clock
 } from 'lucide-react';
 
 interface MuscleAndExerciseProps {
@@ -12,7 +13,10 @@ interface MuscleAndExerciseProps {
 }
 
 export const MuscleAndExercise: React.FC<MuscleAndExerciseProps> = ({ onSelectTerm, onOpenPTModal }) => {
+  const [activeTestTab, setActiveTestTab] = useState<'yubi' | 'one_leg' | 'cs30'>('yubi');
   const [fingerTestResult, setFingerTestResult] = useState<'fit' | 'gap' | 'over' | null>(null);
+  const [oneLegResult, setOneLegResult] = useState<'excellent' | 'good' | 'caution' | 'danger' | null>(null);
+  const [cs30Result, setCs30Result] = useState<'high' | 'normal' | 'low' | 'alert' | null>(null);
 
   return (
     <section id="muscle" className="scroll-mt-16 py-20 bg-white border-b border-slate-200">
@@ -216,113 +220,419 @@ export const MuscleAndExercise: React.FC<MuscleAndExerciseProps> = ({ onSelectTe
           </div>
         </div>
 
-        {/* Interactive Tool: Yubi-Wakka Test (指輪っかテスト) */}
-        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-          <div className="max-w-3xl">
+        {/* Interactive Self-Check Suite (3 Tests) */}
+        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden mb-12">
+          <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 text-xs font-bold mb-4">
               <Target className="w-4 h-4 text-cyan-400" />
-              <span>30秒でわかるセルフチェック</span>
+              <span>自宅でできる身体機能セルフチェック</span>
             </div>
 
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-3">
-              ふくらはぎ「指輪っかテスト」（サルコペニア簡易判定）
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-2">
+              筋肉量 ＆ 神経・バランス総合力のセルフ判定
             </h3>
-
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-              両手の親指と人差し指で「輪っか」を作り、利き足ではない方のふくらはぎの一番太い部分を囲んでみてください。
-              東京大学高齢社会総合研究機構が開発した、筋肉量減少（サルコペニア）のリスクを予測する簡易テストです。
+              筋力だけでなく、目・耳（前庭覚）・足の裏のセンサー（深部感覚）と筋肉が連動する「神経系の総合力」を安全に評価します。
+              ※転倒防止のため、必ず椅子の背もたれやすぐ壁に触れる環境、または2人1組で実施してください。
             </p>
 
-            {/* Test Selection Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            {/* Test Selection Tabs */}
+            <div className="flex flex-wrap gap-2 mb-8 border-b border-slate-700 pb-4">
               <button
-                onClick={() => setFingerTestResult('fit')}
-                className={`p-4 rounded-2xl border text-left transition-all ${
-                  fingerTestResult === 'fit'
-                    ? 'bg-cyan-500 text-slate-950 border-cyan-400 font-bold shadow-lg scale-102'
-                    : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                onClick={() => setActiveTestTab('yubi')}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                  activeTestTab === 'yubi'
+                    ? 'bg-cyan-500 text-slate-950 shadow-lg scale-102'
+                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
                 }`}
               >
-                <div className="text-sm font-bold mb-1">① ちょうど囲める</div>
-                <div className="text-[11px] opacity-80">指先がぴったり接する</div>
+                <Footprints className="w-4 h-4" />
+                <span>① 指輪っかテスト（筋肉量）</span>
               </button>
 
               <button
-                onClick={() => setFingerTestResult('gap')}
-                className={`p-4 rounded-2xl border text-left transition-all ${
-                  fingerTestResult === 'gap'
-                    ? 'bg-rose-500 text-white border-rose-400 font-bold shadow-lg scale-102'
-                    : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                onClick={() => setActiveTestTab('one_leg')}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                  activeTestTab === 'one_leg'
+                    ? 'bg-cyan-500 text-slate-950 shadow-lg scale-102'
+                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
                 }`}
               >
-                <div className="text-sm font-bold mb-1">② 隙間ができる</div>
-                <div className="text-[11px] opacity-80">ふくらはぎが細く隙間がある</div>
+                <Activity className="w-4 h-4" />
+                <span>② 開眼片足立ち（神経・筋総合力）</span>
               </button>
 
               <button
-                onClick={() => setFingerTestResult('over')}
-                className={`p-4 rounded-2xl border text-left transition-all ${
-                  fingerTestResult === 'over'
-                    ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold shadow-lg scale-102'
-                    : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                onClick={() => setActiveTestTab('cs30')}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                  activeTestTab === 'cs30'
+                    ? 'bg-cyan-500 text-slate-950 shadow-lg scale-102'
+                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
                 }`}
               >
-                <div className="text-sm font-bold mb-1">③ 囲めない</div>
-                <div className="text-[11px] opacity-80">太くて指が届かない</div>
+                <Timer className="w-4 h-4" />
+                <span>③ 30秒立ち上がり（下肢筋力）</span>
               </button>
             </div>
 
-            {/* Result Box */}
-            {fingerTestResult && (
-              <div className="p-5 rounded-2xl bg-slate-800/90 border border-slate-600 animate-fade-in text-xs sm:text-sm">
-                {fingerTestResult === 'gap' && (
-                  <div className="space-y-2 text-rose-300">
-                    <div className="flex items-center gap-2 font-bold text-base text-rose-400">
-                      <AlertCircle className="w-5 h-5" />
-                      <span>【要注意】サルコペニア（筋力低下）リスクが約6.6倍高くなっています</span>
-                    </div>
-                    <p className="text-slate-200 leading-relaxed text-xs">
-                      ふくらはぎの筋肉量が低下しているサインです。放置すると転倒や歩行速度低下のリスクが跳ね上がります。今すぐ<strong>「BCAA＋核酸による血流確保」と「専門指導に基づく適切な筋トレ」</strong>を開始することをお勧めします。
-                    </p>
-                  </div>
-                )}
+            {/* TAB 1: 指輪っかテスト */}
+            {activeTestTab === 'yubi' && (
+              <div className="space-y-6 animate-fade-in">
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  両手の親指と人差し指で「輪っか」を作り、利き足ではない方のふくらはぎの一番太い部分を囲んでみてください。
+                  東京大学高齢社会総合研究機構が開発したサルコペニア簡易指標です。
+                </p>
 
-                {fingerTestResult === 'fit' && (
-                  <div className="space-y-2 text-amber-300">
-                    <div className="flex items-center gap-2 font-bold text-base text-amber-400">
-                      <Activity className="w-5 h-5" />
-                      <span>【注意】サルコペニアの予備軍です</span>
-                    </div>
-                    <p className="text-slate-200 leading-relaxed text-xs">
-                      標準的な筋肉量ですが、加齢とともに年間約1%ずつ筋肉は減少しやすくなります。今のうちから運動習慣と適切なタンパク質・アミノ酸摂取を意識しましょう。
-                    </p>
-                  </div>
-                )}
-
-                {fingerTestResult === 'over' && (
-                  <div className="space-y-2 text-emerald-300">
-                    <div className="flex items-center gap-2 font-bold text-base text-emerald-400">
-                      <CheckCircle2 className="w-5 h-5" />
-                      <span>【良好】十分な下肢筋肉量が保たれています</span>
-                    </div>
-                    <p className="text-slate-200 leading-relaxed text-xs">
-                      筋肉量は良好です！この状態を70代、80代、100歳まで維持できるよう、毛細血管の血流サポートと適度な運動負荷を継続していきましょう。
-                    </p>
-                  </div>
-                )}
-
-                <div className="mt-4 pt-3 border-t border-slate-700 flex justify-end">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <button
-                    onClick={onOpenPTModal}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-400 text-slate-950 font-bold text-xs hover:bg-cyan-300 transition-colors"
+                    onClick={() => setFingerTestResult('fit')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      fingerTestResult === 'fit'
+                        ? 'bg-cyan-500 text-slate-950 border-cyan-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
                   >
-                    <span>専門職に運動メニューを無料相談する</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <div className="text-sm font-bold mb-1">① ちょうど囲める</div>
+                    <div className="text-[11px] opacity-80">指先がぴったり接する</div>
+                  </button>
+
+                  <button
+                    onClick={() => setFingerTestResult('gap')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      fingerTestResult === 'gap'
+                        ? 'bg-rose-500 text-white border-rose-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">② 隙間ができる</div>
+                    <div className="text-[11px] opacity-80">ふくらはぎが細く隙間がある</div>
+                  </button>
+
+                  <button
+                    onClick={() => setFingerTestResult('over')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      fingerTestResult === 'over'
+                        ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">③ 囲めない</div>
+                    <div className="text-[11px] opacity-80">太くて指が届かない</div>
                   </button>
                 </div>
+
+                {fingerTestResult && (
+                  <div className="p-5 rounded-2xl bg-slate-800/90 border border-slate-600 text-xs sm:text-sm">
+                    {fingerTestResult === 'gap' && (
+                      <div className="space-y-2 text-rose-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-rose-400">
+                          <AlertCircle className="w-5 h-5" />
+                          <span>【要注意】サルコペニア（筋力低下）リスクが約6.6倍</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          ふくらはぎの筋肉量が低下しているサインです。今すぐ「BCAA＋核酸による血流確保」と「専門指導に基づく適切な筋トレ」を開始することをお勧めします。
+                        </p>
+                      </div>
+                    )}
+                    {fingerTestResult === 'fit' && (
+                      <div className="space-y-2 text-amber-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-amber-400">
+                          <Activity className="w-5 h-5" />
+                          <span>【注意】サルコペニアの予備軍です</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          標準的な筋肉量ですが、加齢とともに減少が加速します。今のうちから運動習慣とアミノ酸補給を意識しましょう。
+                        </p>
+                      </div>
+                    )}
+                    {fingerTestResult === 'over' && (
+                      <div className="space-y-2 text-emerald-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-emerald-400">
+                          <CheckCircle2 className="w-5 h-5" />
+                          <span>【良好】十分な下肢筋肉量が保たれています</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          筋肉量は良好です！この状態を70代、80代、100歳まで維持できるよう、適度な運動負荷を継続していきましょう。
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             )}
+
+            {/* TAB 2: 開眼片足立ちテスト */}
+            {activeTestTab === 'one_leg' && (
+              <div className="space-y-6 animate-fade-in">
+                <div className="p-4 rounded-2xl bg-slate-800/60 border border-slate-700 text-xs text-slate-300 leading-relaxed space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-400 font-bold">
+                    <ShieldAlert className="w-4 h-4" />
+                    <span>なぜ「閉眼」ではなく「開眼（椅子サポートあり）」なのか？</span>
+                  </div>
+                  <p>
+                    目を閉じた片足立ちは視覚遮断により転倒リスクが極めて高いため、一般の方には危険です。
+                    一方、<strong>「開眼片足立ち」</strong>は椅子の背もたれにすぐ手が触れられる位置で行うことで安全を担保しながら、
+                    <strong>「前庭覚（耳のバランス）・深部感覚（足裏の圧力センサー）・中殿筋（骨盤の安定）・小脳系の協調」</strong>という【神経・筋の総合力】を厳密に測定できます（厚労省・日本整形外科学会基準）。
+                  </p>
+                  <p className="text-[11px] text-amber-300">
+                    ※左右どちらの手も腰に当て、片足を床から約5cm上げます。バランスが崩れたり、支持脚がずれたり、椅子に手をついた時点で計測終了です。
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <button
+                    onClick={() => setOneLegResult('excellent')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      oneLegResult === 'excellent'
+                        ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">60秒以上</div>
+                    <div className="text-[11px] opacity-80">40〜50代基準クリア</div>
+                  </button>
+
+                  <button
+                    onClick={() => setOneLegResult('good')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      oneLegResult === 'good'
+                        ? 'bg-cyan-500 text-slate-950 border-cyan-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">30〜59秒</div>
+                    <div className="text-[11px] opacity-80">60〜70代基準クリア</div>
+                  </button>
+
+                  <button
+                    onClick={() => setOneLegResult('caution')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      oneLegResult === 'caution'
+                        ? 'bg-amber-500 text-slate-950 border-amber-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">15〜29秒</div>
+                    <div className="text-[11px] opacity-80">運動機能低下サイン</div>
+                  </button>
+
+                  <button
+                    onClick={() => setOneLegResult('danger')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      oneLegResult === 'danger'
+                        ? 'bg-rose-500 text-white border-rose-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">15秒未満</div>
+                    <div className="text-[11px] opacity-80">転倒・ロコモ高リスク</div>
+                  </button>
+                </div>
+
+                {oneLegResult && (
+                  <div className="p-5 rounded-2xl bg-slate-800/90 border border-slate-600 text-xs sm:text-sm">
+                    {oneLegResult === 'excellent' && (
+                      <div className="space-y-2 text-emerald-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-emerald-400">
+                          <CheckCircle2 className="w-5 h-5" />
+                          <span>【優秀】神経・筋バランスは極めて高水準です</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          骨盤を支える中殿筋や体幹インナーマッスル、足底感覚が鋭く協調しています。この運動寿命を維持するため、定期的な負荷トレーニングを継続しましょう。
+                        </p>
+                      </div>
+                    )}
+                    {oneLegResult === 'good' && (
+                      <div className="space-y-2 text-cyan-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-cyan-400">
+                          <CheckCircle2 className="w-5 h-5" />
+                          <span>【良好】標準的な自立歩行バランスを保持しています</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          日常歩行には十分な平衡感覚があります。70代・80代でもこれを維持できるよう、椅子を使ったスクワットやつま先立ち運動を取り入れましょう。
+                        </p>
+                      </div>
+                    )}
+                    {oneLegResult === 'caution' && (
+                      <div className="space-y-2 text-amber-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-amber-400">
+                          <AlertCircle className="w-5 h-5" />
+                          <span>【注意】バランス感覚・股関節支持力が低下傾向です</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          歩行時のふらつきや階段の降段で不安が出やすいレベルです。中殿筋の筋力強化と、核酸・BCAAによる筋血流改善を強く推奨します。
+                        </p>
+                      </div>
+                    )}
+                    {oneLegResult === 'danger' && (
+                      <div className="space-y-2 text-rose-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-rose-400">
+                          <AlertCircle className="w-5 h-5" />
+                          <span>【要注意】ロコモティブシンドローム（運動器不安定症）の兆候</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          15秒未満は、つまずきや転倒骨折のリスクが跳ね上がります。自己流ではなく、リハビリ専門職の評価のもとで安全な再教育プログラムを開始してください。
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* TAB 3: 30秒椅子立ち上がりテスト（CS-30） */}
+            {activeTestTab === 'cs30' && (
+              <div className="space-y-6 animate-fade-in">
+                <div className="p-4 rounded-2xl bg-slate-800/60 border border-slate-700 text-xs text-slate-300 leading-relaxed space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-400 font-bold">
+                    <Clock className="w-4 h-4" />
+                    <span>CS-30（30-Second Chair Stand Test）のやり方</span>
+                  </div>
+                  <p>
+                    椅子に浅く腰掛け、両手を胸の前でクロスします。30秒間で「完全に立ち上がり、再び座る」動作を何回繰り返せるかを数えます。
+                    椅子があるため転倒の危険が極めて少なく、大腿四頭筋・殿筋群の出力と神経系のスピードを測る世界標準テストです。
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <button
+                    onClick={() => setCs30Result('high')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      cs30Result === 'high'
+                        ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">20回以上</div>
+                    <div className="text-[11px] opacity-80">極めて力強い下肢筋力</div>
+                  </button>
+
+                  <button
+                    onClick={() => setCs30Result('normal')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      cs30Result === 'normal'
+                        ? 'bg-cyan-500 text-slate-950 border-cyan-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">15〜19回</div>
+                    <div className="text-[11px] opacity-80">健康的な日常生活レベル</div>
+                  </button>
+
+                  <button
+                    onClick={() => setCs30Result('low')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      cs30Result === 'low'
+                        ? 'bg-amber-500 text-slate-950 border-amber-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">10〜14回</div>
+                    <div className="text-[11px] opacity-80">筋持久力低下のサイン</div>
+                  </button>
+
+                  <button
+                    onClick={() => setCs30Result('alert')}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      cs30Result === 'alert'
+                        ? 'bg-rose-500 text-white border-rose-400 font-bold shadow-lg scale-102'
+                        : 'bg-slate-800/80 hover:bg-slate-700/80 border-slate-700 text-white'
+                    }`}
+                  >
+                    <div className="text-sm font-bold mb-1">10回未満</div>
+                    <div className="text-[11px] opacity-80">立ち座り・階段の危険域</div>
+                  </button>
+                </div>
+
+                {cs30Result && (
+                  <div className="p-5 rounded-2xl bg-slate-800/90 border border-slate-600 text-xs sm:text-sm">
+                    {cs30Result === 'high' && (
+                      <div className="space-y-2 text-emerald-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-emerald-400">
+                          <CheckCircle2 className="w-5 h-5" />
+                          <span>【高機能】下肢筋力・神経出力ともに申し分ありません</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          階段や坂道も軽快に登れる筋力があります。80代・90代でもこの力強さを保てるよう、適切な運動処方を継続しましょう。
+                        </p>
+                      </div>
+                    )}
+                    {cs30Result === 'normal' && (
+                      <div className="space-y-2 text-cyan-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-cyan-400">
+                          <CheckCircle2 className="w-5 h-5" />
+                          <span>【標準】自立した生活を送るための筋力があります</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          良好ですが、油断すると年間1〜2%ずつ筋力が衰えます。BCAAの摂取と週2回の筋トレで筋肉の山（運動貯蓄）を守りましょう。
+                        </p>
+                      </div>
+                    )}
+                    {cs30Result === 'low' && (
+                      <div className="space-y-2 text-amber-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-amber-400">
+                          <AlertCircle className="w-5 h-5" />
+                          <span>【注意】大腿四頭筋の衰えが始まっています</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          椅子から立つ時に手すりや膝に手をつきたくなっていませんか？今から負荷運動を習慣化すれば、確実に回復できます。
+                        </p>
+                      </div>
+                    )}
+                    {cs30Result === 'alert' && (
+                      <div className="space-y-2 text-rose-300">
+                        <div className="flex items-center gap-2 font-bold text-base text-rose-400">
+                          <AlertCircle className="w-5 h-5" />
+                          <span>【要注意】日常生活動作の自立が脅かされる水準です</span>
+                        </div>
+                        <p className="text-slate-200 leading-relaxed text-xs">
+                          10回未満は筋力（MVC）が著しく低下しています。無理な運動は膝痛を悪化させるため、リハビリ専門職に適切な負荷設定をご相談ください。
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            <div className="mt-8 pt-4 border-t border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span className="text-xs text-slate-400">
+                テスト結果をもとに、あなたの筋力（MVC）に合ったメニューを作成します
+              </span>
+              <button
+                onClick={onOpenPTModal}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-400 text-slate-950 font-bold text-xs hover:bg-cyan-300 transition-colors"
+              >
+                <span>専門職に無料相談する</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
           </div>
+        </div>
+
+        {/* Feature Banner: Link to Exercise Prescription Dedicated Page */}
+        <div className="rounded-3xl p-6 sm:p-8 md:p-10 bg-gradient-to-r from-teal-900 via-slate-900 to-indigo-950 text-white border border-teal-500/30 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="space-y-3 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs font-bold">
+              <Dumbbell className="w-4 h-4" />
+              <span>40代〜90代のための臨床運動学</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black leading-snug">
+              「80代・90代でも筋肉は絶対に育つ。」<br />
+              MVC（最大筋力）測定と下肢・体幹の安全な運動処方ガイド
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              適正な負荷量（MVC比率）と正しいフォームを守れば、何歳からでも危険なく筋力向上が可能です。
+              大腿四頭筋・中殿筋・体幹インナー（腹横筋・多裂筋）の部位別処方を別ページで詳しく解説しています。
+            </p>
+          </div>
+          <a
+            href="/exercise-prescription"
+            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-teal-400 to-emerald-400 hover:from-teal-300 hover:to-emerald-300 text-slate-950 font-black text-sm shadow-lg shadow-teal-500/20 transition-all hover:scale-105"
+          >
+            <span>運動処方の詳細ガイドを読む</span>
+            <ArrowUpRight className="w-5 h-5" />
+          </a>
         </div>
       </div>
     </section>
