@@ -2,13 +2,12 @@
 
 import React, { useState } from 'react';
 import { Header } from '@/components/Header';
-import { Hero } from '@/components/Hero';
-import { AuthorIntro } from '@/components/AuthorIntro';
-import { HealthFoundation } from '@/components/HealthFoundation';
-import { PhysiologyBasics } from '@/components/PhysiologyBasics';
-import { PatentSection } from '@/components/PatentSection';
-import { EvidenceAssessment } from '@/components/EvidenceAssessment';
-import { MuscleAndExercise } from '@/components/MuscleAndExercise';
+import { BeginnerHero } from '@/components/BeginnerHero';
+import { AboutFordays } from '@/components/AboutFordays';
+import { WhatIsNucleicAcid } from '@/components/WhatIsNucleicAcid';
+import { BeginnerFeatures } from '@/components/BeginnerFeatures';
+import { BeginnerFaq } from '@/components/BeginnerFaq';
+import { EvidenceBridgeBanner } from '@/components/EvidenceBridgeBanner';
 import { PersonalTraining } from '@/components/PersonalTraining';
 import { Footer } from '@/components/Footer';
 import { TermModal } from '@/components/TermModal';
@@ -34,40 +33,31 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       {/* グローバルヘッダー */}
       <Header onOpenPTModal={handleOpenPTModal} />
 
       {/* メインコンテンツ */}
       <main className="flex-grow">
-        {/* 1. ヒーローセクション */}
-        <Hero onOpenPTModal={handleOpenPTModal} />
+        {/* 1. 初心者向け親しみやすいヒーロー（3分でわかる基本 ＆ 詳細エビデンスへの2大導線） */}
+        <BeginnerHero onOpenPTModal={handleOpenPTModal} />
 
-        {/* 2. リハビリ専門職の想いと客観的スタンス */}
-        <AuthorIntro />
+        {/* 2. FORDAYS（フォーデイズ）ってどんな会社？歴史・実績・自社工場のこだわり */}
+        <AboutFordays />
 
-        {/* 3. 健康の4大基盤 ＆ 提唱『運動寿命』 ＆ 論文エビデンス */}
-        <HealthFoundation
-          onSelectTerm={handleOpenTermModal}
-          onOpenPTModal={handleOpenPTModal}
-        />
+        {/* 3. そもそも「核酸」ってなに？なぜ身体にいいの？DNA・RNAと加齢による減少 */}
+        <WhatIsNucleicAcid />
 
-        {/* 4. Wikipedia風 基礎生理学・生化学メカニズム */}
-        <PhysiologyBasics onSelectTerm={handleOpenTermModal} />
+        {/* 4. フォーデイズの核酸ドリンクが選ばれる3つの特長 ＆ 専門職が語る「栄養×運動」 */}
+        <BeginnerFeatures />
 
-        {/* 4. 特許・共同研究・論文の完全解析（Google Patents原本リンク付） */}
-        <PatentSection onSelectTerm={handleOpenTermModal} />
+        {/* 5. 初心者のよくある質問（FAQ） */}
+        <BeginnerFaq />
 
-        {/* 5. 科学的エビデンスの「強み」と「現状の限界点」 */}
-        <EvidenceAssessment onSelectTerm={handleOpenTermModal} />
+        {/* 6. がっつり詳しく知りたい人向け：エビデンス検証ポータル ＆ 運動処方学への大型ブリッジバナー */}
+        <EvidenceBridgeBanner onOpenPTModal={handleOpenPTModal} />
 
-        {/* 6. 筋肉ケア・BCAA・運動（メカニカルストレス）の絶対性 */}
-        <MuscleAndExercise
-          onSelectTerm={handleOpenTermModal}
-          onOpenPTModal={handleOpenPTModal}
-        />
-
-        {/* 7. パーソナルトレーニング案内＆無料相談CTA */}
+        {/* 7. パーソナルトレーニング案内＆無料相談モーダル */}
         <PersonalTraining
           isModalOpen={isPTModalOpen}
           onOpenModal={handleOpenPTModal}
@@ -78,7 +68,7 @@ export default function Home() {
       {/* フッター（薬機法免責事項・サイトマップ） */}
       <Footer onOpenPTModal={handleOpenPTModal} />
 
-      {/* Wikipedia風 用語解説モーダル */}
+      {/* 用語解説モーダル */}
       <TermModal
         termId={selectedTermId}
         onClose={handleCloseTermModal}

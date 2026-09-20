@@ -35,12 +35,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPTModal }) => {
           <div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">サイトマップ</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/#author" className="hover:text-cyan-400 transition-colors">執筆者のスタンス</a></li>
-              <li><a href="/#health-pillars" className="hover:text-cyan-400 transition-colors">健康の4大基盤＆運動寿命</a></li>
-              <li><a href="/#patents" className="hover:text-cyan-400 transition-colors">特許・共同研究（原本リンク）</a></li>
-              <li><a href="/#evidence" className="hover:text-cyan-400 transition-colors">エビデンスの強みと限界</a></li>
-              <li><a href="/#muscle" className="hover:text-cyan-400 transition-colors">筋肉ケアと運動負荷</a></li>
-              <li><a href="/exercise-prescription" className="text-cyan-300 font-bold hover:text-cyan-200 transition-colors">40代〜90代の運動処方学</a></li>
+              <li><a href="/" className="hover:text-cyan-400 transition-colors">はじめての方へ（ホーム）</a></li>
+              <li><a href="/#about-fordays" className="hover:text-cyan-400 transition-colors">FORDAYSとは？</a></li>
+              <li><a href="/#what-is-nucleic-acid" className="hover:text-cyan-400 transition-colors">核酸とは？（DNA・RNA）</a></li>
+              <li><a href="/evidence" className="text-cyan-300 font-bold hover:text-cyan-200 transition-colors">エビデンス検証ポータル（特許・論文原本）</a></li>
+              <li><a href="/exercise-prescription" className="text-teal-300 font-bold hover:text-teal-200 transition-colors">40代〜90代の運動処方学</a></li>
               <li>
                 <button
                   onClick={onOpenPTModal}

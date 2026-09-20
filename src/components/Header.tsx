@@ -11,11 +11,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: '健康基盤＆運動寿命', href: '/#health-pillars' },
-    { name: '特許＆研究', href: '/#patents' },
-    { name: '筋肉×運動', href: '/#muscle' },
-    { name: '運動処方学', href: '/exercise-prescription' },
-    { name: '運動指導相談', href: '/#personal-training' },
+    { name: 'はじめての方へ', href: '/' },
+    { name: 'FORDAYSとは？', href: '/#about-fordays' },
+    { name: '核酸とは？', href: '/#what-is-nucleic-acid' },
+    { name: 'エビデンス詳細（論文・特許）', href: '/evidence', highlight: true },
+    { name: '40代〜90代の運動処方学', href: '/exercise-prescription' },
   ];
 
   return (
@@ -32,23 +32,27 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
                 <span className="font-bold text-slate-900 tracking-tight text-base sm:text-lg">
                   FORDAYS エビデンス検証
                 </span>
-                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-200 hidden sm:inline-block">
-                  リハビリ専門職の検証
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-teal-50 text-teal-800 border border-teal-200 hidden sm:inline-block">
+                  専門職がやさしく解説
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 hidden md:block">
-                科学的客観性と生理学的アプローチから読み解く健康の真実
+                はじめての核酸入門から、特許公報・論文原本の検証まで
               </p>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors"
+                className={`text-xs xl:text-sm font-medium transition-colors ${
+                  link.highlight
+                    ? 'px-2.5 py-1 rounded-lg bg-cyan-50 text-cyan-800 border border-cyan-200 font-bold hover:bg-cyan-100'
+                    : 'text-slate-600 hover:text-brand-600'
+                }`}
               >
                 {link.name}
               </a>
@@ -87,7 +91,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600"
+              className={`block px-3 py-2 rounded-lg text-base font-medium ${
+                link.highlight
+                  ? 'bg-cyan-50 text-cyan-900 font-bold border border-cyan-200'
+                  : 'text-slate-700 hover:bg-slate-50 hover:text-brand-600'
+              }`}
             >
               {link.name}
             </a>

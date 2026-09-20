@@ -30,14 +30,24 @@ export default function ExercisePrescriptionPage() {
       <main className="flex-grow">
         {/* Breadcrumb & Navigation */}
         <div className="bg-slate-900 border-b border-slate-800 py-3">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs">
-            <a
-              href="/"
-              className="inline-flex items-center gap-1 text-slate-300 hover:text-cyan-400 transition-colors font-medium"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>トップページ（エビデンス検証ポータル）に戻る</span>
-            </a>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2 text-xs">
+            <div className="flex items-center gap-4">
+              <a
+                href="/"
+                className="inline-flex items-center gap-1 text-slate-300 hover:text-cyan-400 transition-colors font-medium"
+              >
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>ホーム（はじめての方）</span>
+              </a>
+              <span className="text-slate-600">|</span>
+              <a
+                href="/evidence"
+                className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors font-medium"
+              >
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>エビデンス検証ポータル（特許・論文原本）</span>
+              </a>
+            </div>
             <span className="text-slate-400 hidden sm:inline">臨床運動学 ＆ 運動処方ガイド</span>
           </div>
         </div>
