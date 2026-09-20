@@ -60,6 +60,38 @@ export default function EvidencePage() {
         </div>
       </div>
 
+      {/* 【ビジネスとして取り組みたい人向けはこちら】特設トップバナー */}
+      <div className="bg-gradient-to-r from-amber-900/90 via-slate-900 to-amber-950 text-white border-b-2 border-amber-500/50 py-4 sm:py-5 px-4 sm:px-6 shadow-lg">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5 text-center md:text-left">
+            <div className="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-300 flex items-center justify-center flex-shrink-0">
+              <span className="text-xl">💼</span>
+            </div>
+            <div>
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                <span className="px-2 py-0.5 rounded bg-amber-400 text-slate-950 text-[10px] font-black tracking-wider uppercase">
+                  ビジネス検討者向け
+                </span>
+                <span className="font-extrabold text-sm sm:text-base text-amber-100">
+                  ビジネスとして取り組みたい人向けはこちら
+                </span>
+              </div>
+              <p className="text-xs text-amber-200/80 mt-0.5">
+                連鎖販売取引法のルール、他ネットワークビジネスとの客観的比較、優位性と注意点（誇張なし・嘘なし）
+              </p>
+            </div>
+          </div>
+
+          <Link
+            href="/business"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-sm shadow-md shadow-amber-500/20 transition-all hover:scale-105 whitespace-nowrap flex-shrink-0"
+          >
+            <span>ビジネス真実ガイドを読む</span>
+            <span className="text-slate-900">→</span>
+          </Link>
+        </div>
+      </div>
+
       {/* メインコンテンツ */}
       <main className="flex-grow">
         {/* 1. ヒーローセクション */}

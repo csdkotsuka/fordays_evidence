@@ -117,6 +117,36 @@ export const EvidenceBridgeBanner: React.FC<EvidenceBridgeBannerProps> = ({ onOp
           </div>
         </div>
 
+        {/* ビジネスとして取り組みたい人向けカード */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-amber-950/90 via-slate-900 to-slate-950 border-2 border-amber-500/50 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4 text-center md:text-left">
+            <div className="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-300 flex items-center justify-center flex-shrink-0 text-2xl">
+              💼
+            </div>
+            <div className="space-y-1">
+              <div className="flex items-center justify-center md:justify-start gap-2">
+                <span className="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 text-[10px] font-black uppercase">
+                  ビジネス検討者向け
+                </span>
+                <span className="text-amber-300 text-xs font-bold">正々堂々と挑戦する人へ</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-black text-white">
+                ビジネスとして取り組みたい人向けはこちら（特商法・他社MLM比較）
+              </h3>
+              <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
+                連鎖販売取引法のルール、他ネットワークビジネスとの構造的違い、FORDAYSの優位性と注意点を、誇張なく嘘偽りなく公開しています。
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/business"
+            className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-sm shadow-lg shadow-amber-500/25 transition-all hover:scale-105 whitespace-nowrap flex-shrink-0 flex items-center gap-2"
+          >
+            <span>ビジネス真実ガイドを読む</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
         {/* 無料相談CTAストリップ */}
         <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div className="space-y-1">
