@@ -74,6 +74,14 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, onClose, onOpe
       badgeColor: 'bg-teal-100 text-teal-900 border-teal-300 font-bold',
     },
     {
+      title: '洗顔・スキンケア ＆ メイク手順',
+      subtitle: '全31種コスメ・6大パターン別・皮膚生理学の黄金順序',
+      href: '/skincare-routine',
+      icon: Sparkles,
+      badge: '6大パターン解説',
+      badgeColor: 'bg-purple-100 text-purple-900 border-purple-300 font-bold',
+    },
+    {
       title: '40代〜90代の臨床運動処方学',
       subtitle: 'MVC最大筋力測定・安全な5大エクササイズ・BCAA',
       href: '/exercise-prescription',

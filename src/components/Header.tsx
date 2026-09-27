@@ -52,6 +52,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
 
             {/* 右側: クイックリンク（ビジネス） ＋ CTA */}
             <div className="flex items-center gap-2.5 sm:gap-3">
+              {/* 洗顔・メイク手順へのクイックリンク */}
+              <Link
+                href="/skincare-routine"
+                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-200/80 transition-all hover:scale-102"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-purple-600" />
+                <span>洗顔・メイク手順</span>
+              </Link>
+
               {/* 製品カタログへのクイックリンク */}
               <Link
                 href="/products"

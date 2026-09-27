@@ -150,6 +150,13 @@ export default function ProductsPage() {
                   <ShoppingBag className="w-4 h-4" />
                   <span>全79製品カタログ ＆ 客観的批評</span>
                 </button>
+                <Link
+                  href="/skincare-routine"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-purple-300 hover:text-white hover:bg-purple-900/40 border border-purple-500/30 transition-all ml-1"
+                >
+                  <Sparkles className="w-4 h-4 text-purple-400" />
+                  <span>洗顔・メイク手順バイブル（全31品）</span>
+                </Link>
               </div>
             </div>
           </div>
