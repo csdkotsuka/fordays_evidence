@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ShieldCheck, Dumbbell, Menu, Sparkles, ChevronRight, Briefcase } from 'lucide-react';
+import { ShieldCheck, Dumbbell, Menu, Sparkles, ChevronRight, Briefcase, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import { SidebarMenu } from '@/components/SidebarMenu';
 
@@ -52,6 +52,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
 
             {/* 右側: クイックリンク（ビジネス） ＋ CTA */}
             <div className="flex items-center gap-2.5 sm:gap-3">
+              {/* 製品カタログへのクイックリンク */}
+              <Link
+                href="/products"
+                className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-teal-900 bg-teal-50 hover:bg-teal-100 border border-teal-200/80 transition-all hover:scale-102"
+              >
+                <ShoppingBag className="w-3.5 h-3.5 text-teal-600" />
+                <span>製品カタログ ＆ 批評</span>
+              </Link>
+
               {/* ビジネスガイドへのクイックリンク（控えめかつ分かりやすいバッジ） */}
               <Link
                 href="/business"

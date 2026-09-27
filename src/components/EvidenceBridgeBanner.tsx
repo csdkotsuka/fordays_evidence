@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ShieldCheck, BookOpen, ArrowRight, ExternalLink, Dumbbell, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, BookOpen, ArrowRight, ExternalLink, Dumbbell, Sparkles, CheckCircle2, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 
 interface EvidenceBridgeBannerProps {
@@ -34,84 +34,112 @@ export const EvidenceBridgeBanner: React.FC<EvidenceBridgeBannerProps> = ({ onOp
           </p>
         </div>
 
-        {/* 2つの詳細ポータルカード */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* 3つの詳細ポータルカード */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* カード1: エビデンス検証ポータル */}
-          <div className="p-8 rounded-3xl bg-slate-800/80 border-2 border-cyan-500/40 shadow-2xl flex flex-col justify-between space-y-6 hover:border-cyan-400 transition-all hover:scale-[1.01] group">
-            <div className="space-y-4">
+          <div className="p-7 rounded-3xl bg-slate-800/80 border-2 border-cyan-500/40 shadow-2xl flex flex-col justify-between space-y-5 hover:border-cyan-400 transition-all hover:scale-[1.01] group">
+            <div className="space-y-3.5">
               <div className="flex items-center justify-between">
-                <span className="px-3 py-1 rounded-full bg-cyan-400/20 text-cyan-300 text-xs font-bold border border-cyan-400/30">
+                <span className="px-2.5 py-0.5 rounded-full bg-cyan-400/20 text-cyan-300 text-[10px] font-bold border border-cyan-400/30">
                   深掘り専門ポータル
                 </span>
-                <span className="text-xs text-slate-400 font-mono">Google Patents 原本付</span>
+                <span className="text-[10px] text-slate-400 font-mono">原本付</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-cyan-300 transition-colors">
-                FORDAYS エビデンス検証ポータル
+              <h3 className="text-lg sm:text-xl font-black text-white group-hover:text-cyan-300 transition-colors">
+                エビデンス検証ポータル
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                特許第7857645号（抗酸化能）などの公報原本、東京大学共同研究論文、サルベージ経路とデノボ合成の生化学メカニズム、エビデンスの強みと限界点まで網羅。
+              <p className="text-xs text-slate-300 leading-relaxed">
+                特許第7857645号などの公報原本、東京大学共同研究論文、サルベージ経路の生化学メカニズム、エビデンスの強みと限界点まで網羅。
               </p>
-              <ul className="space-y-2 text-xs text-slate-300">
-                <li className="flex items-center gap-2">
+              <ul className="space-y-1.5 text-xs text-slate-300">
+                <li className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
-                  <span>特許番号とGoogle Patentsへのダイレクト原本リンク</span>
+                  <span>特許番号・Google Patents原本</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
-                  <span>Wikipedia風 生化学・生理学メカニズム解説（用語辞典付）</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
-                  <span>健康の4大基盤と「運動寿命」の提唱</span>
+                  <span>生化学・生理学メカニズム解説</span>
                 </li>
               </ul>
             </div>
 
             <Link
               href="/evidence"
-              className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-black text-sm transition-all shadow-lg shadow-cyan-500/25"
+              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-black text-xs sm:text-sm transition-all shadow-md shadow-cyan-500/20"
             >
-              <span>エビデンス検証ポータルを詳しく見る</span>
+              <span>ポータルを詳しく見る</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
-          {/* カード2: 運動処方学ガイド */}
-          <div className="p-8 rounded-3xl bg-slate-800/80 border-2 border-teal-500/40 shadow-2xl flex flex-col justify-between space-y-6 hover:border-teal-400 transition-all hover:scale-[1.01] group">
-            <div className="space-y-4">
+          {/* カード2: 全製品カタログ ＆ 科学的批評 */}
+          <div className="p-7 rounded-3xl bg-slate-800/80 border-2 border-teal-500/40 shadow-2xl flex flex-col justify-between space-y-5 hover:border-teal-400 transition-all hover:scale-[1.01] group">
+            <div className="space-y-3.5">
               <div className="flex items-center justify-between">
-                <span className="px-3 py-1 rounded-full bg-teal-400/20 text-teal-300 text-xs font-bold border border-teal-400/30">
+                <span className="px-2.5 py-0.5 rounded-full bg-teal-400/20 text-teal-300 text-[10px] font-bold border border-teal-400/30">
+                  全79商品完全網羅
+                </span>
+                <span className="text-[10px] text-teal-300 font-mono">重複ゼロ</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-black text-white group-hover:text-teal-300 transition-colors">
+                製品カタログ ＆ 科学的批評
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                公式サイトとオンラインショップを完全突合。「なぜ効果的なのか」と「一般品との違い」、そして「一般品と同じ部分・限界」まで客観検証。
+              </p>
+              <ul className="space-y-1.5 text-xs text-slate-300">
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0" />
+                  <span>2大サイト全79品目をカテゴリー整理</span>
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0" />
+                  <span>化粧品・サプリの一般品との対比批評</span>
+                </li>
+              </ul>
+            </div>
+
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-black text-xs sm:text-sm transition-all shadow-md shadow-teal-500/20"
+            >
+              <span>製品カタログ・批評を見る</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+
+          {/* カード3: 運動処方学ガイド */}
+          <div className="p-7 rounded-3xl bg-slate-800/80 border-2 border-emerald-500/40 shadow-2xl flex flex-col justify-between space-y-5 hover:border-emerald-400 transition-all hover:scale-[1.01] group">
+            <div className="space-y-3.5">
+              <div className="flex items-center justify-between">
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-400/20 text-emerald-300 text-[10px] font-bold border border-emerald-400/30">
                   臨床運動学
                 </span>
-                <span className="text-xs text-slate-400 font-mono">40代〜90代対象</span>
+                <span className="text-[10px] text-slate-400 font-mono">40代〜90代</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-teal-300 transition-colors">
-                安全な運動処方 ＆ 筋肉ケアガイド
+              <h3 className="text-lg sm:text-xl font-black text-white group-hover:text-emerald-300 transition-colors">
+                安全な運動処方 ＆ 筋肉ケア
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                「80代・90代でも筋肉は絶対に育つ」。ハーバード大の研究やMVC（最大筋力）測定の重要性、怪我をしない安全な5大自宅エクササイズとサプリメント摂取タイミング。
+              <p className="text-xs text-slate-300 leading-relaxed">
+                「何歳からでも筋肉は育つ」。MVC測定の重要性、怪我をしない安全な5大自宅エクササイズとBCAA・核酸ドリンクの摂取タイミング。
               </p>
-              <ul className="space-y-2 text-xs text-slate-300">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0" />
-                  <span>90代被験者の筋力174%増加（JAMA論文エビデンス）</span>
+              <ul className="space-y-1.5 text-xs text-slate-300">
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                  <span>90代筋力174%増（JAMA論文）</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0" />
-                  <span>下肢筋 ＋ 体幹筋（インナーユニット）の鍛え方</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0" />
-                  <span>BCAA ＆ 核酸ドリンクの運動連動プロトコル</span>
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                  <span>BCAA ＆ 核酸の運動連動プロトコル</span>
                 </li>
               </ul>
             </div>
 
             <Link
               href="/exercise-prescription"
-              className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-black text-sm transition-all shadow-lg shadow-teal-500/25"
+              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-xs sm:text-sm transition-all shadow-md shadow-emerald-500/20"
             >
-              <span>臨床運動処方ガイドを見る</span>
+              <span>臨床運動処方を見る</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

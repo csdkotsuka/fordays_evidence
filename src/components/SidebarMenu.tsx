@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { 
   X, Home, Briefcase, ShieldCheck, Dumbbell, 
-  HelpCircle, ChevronRight, Sparkles, PhoneCall, ExternalLink 
+  HelpCircle, ChevronRight, Sparkles, PhoneCall, ExternalLink, ShoppingBag 
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -64,6 +64,14 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, onClose, onOpe
       icon: ShieldCheck,
       badge: '特許公報原本付',
       badgeColor: 'bg-cyan-100 text-cyan-900 border-cyan-200',
+    },
+    {
+      title: '製品カタログ ＆ 科学的批評',
+      subtitle: '全79製品突合・特許エビデンス・一般品との違いと限界',
+      href: '/products',
+      icon: ShoppingBag,
+      badge: '全79商品網羅',
+      badgeColor: 'bg-teal-100 text-teal-900 border-teal-300 font-bold',
     },
     {
       title: '40代〜90代の臨床運動処方学',
