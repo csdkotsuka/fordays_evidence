@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { 
   Briefcase, ShieldCheck, Scale, AlertTriangle, CheckCircle2, 
   ArrowRight, HeartHandshake, Users, TrendingUp, HelpCircle, 
-  Award, FileText, Ban, ArrowLeft, Sparkles, Check, X as CloseIcon, Flame
+  Award, FileText, Ban, ArrowLeft, Sparkles, Check, X as CloseIcon, Flame,
+  Plane, Gift, Trophy, MapPin, ExternalLink, Star
 } from 'lucide-react';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
@@ -449,13 +450,213 @@ export default function BusinessPage() {
           </div>
         </section>
 
-        {/* 第4章: 嘘をつかない「劣位性・注意点・向き不向き」 */}
+        {/* 第4章: 成果を称える充実のインセンティブ ＆ 会員特典制度 */}
+        <section className="py-16 sm:py-20 bg-gradient-to-b from-amber-50/50 via-white to-orange-50/30 border-b border-amber-200/60">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div className="text-center space-y-4">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-xs font-bold text-amber-900 shadow-sm">
+                <Trophy className="w-4 h-4 text-amber-600" />
+                <span>Chapter 4: 会員特典 ＆ モチベーションプログラム</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-snug">
+                頑張りが形になる、最高峰の体験を。<br className="hidden sm:inline" />
+                豪華研修旅行「AGENDA」＆ 充実の会員優待特典
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                フォーデイズでは、毎月のボーナス報酬だけでなく、健康を広め仲間を育成した会員への特別な招待旅行（AGENDA）、
+                専用保養施設、1万人規模の全国コンベンション表彰など、人生を豊かに彩る多彩なインセンティブ制度が用意されています。
+              </p>
+            </div>
+
+            {/* インセンティブ4本柱カードグリッド */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {/* 特典1: AGENDA 海外・国内特別研修旅行 */}
+              <div className="bg-white rounded-3xl border border-amber-200/80 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow space-y-5 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white flex items-center justify-center shadow-md">
+                      <Plane className="w-6 h-6" />
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-black">
+                      年1〜2回 開催
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold text-amber-600 uppercase tracking-widest block mb-1">Incentive Trip Program</span>
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900">
+                      海外・国内ご招待研修旅行「AGENDA（アジェンダ）」
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    一定の基準を達成した会員が招待されるフォーデイズ最大のインセンティブ旅行。
+                    過去には<strong className="text-slate-900">ドバイ、ハワイ（オアフ島）、シンガポール、プーケット、沖縄・宮古島のラグジュアリーリゾート</strong>等で開催。
+                    最高級ホテルの貸切ディナーや特別な体験プログラムを通じ、全国のトップリーダーたちと志を分かち合う感動のステージです。
+                  </p>
+                  <div className="p-3.5 rounded-xl bg-amber-50/80 border border-amber-100 text-xs text-amber-900 space-y-1">
+                    <div className="font-bold flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                      <span>単なる観光旅行ではない「学びと称賛の場」</span>
+                    </div>
+                    <p className="text-[11px] text-amber-800 leading-relaxed">
+                      経営陣との距離が近く、これからのビジョンを共有しながら、お互いの健闘をたたえ合う絆づくりの場として愛されています。
+                    </p>
+                  </div>
+                </div>
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="text-slate-500 font-medium">参加対象：規定条件を達成した会員</span>
+                  <span className="text-amber-600 font-bold">完全招待制（渡航・宿泊費補助等）</span>
+                </div>
+              </div>
+
+              {/* 特典2: 全国大会「フォーデイズ春」＆ 表彰ステージ */}
+              <div className="bg-white rounded-3xl border border-cyan-200/80 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow space-y-5 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-600 to-teal-500 text-white flex items-center justify-center shadow-md">
+                      <Trophy className="w-6 h-6" />
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-black">
+                      毎年 春開催
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold text-cyan-600 uppercase tracking-widest block mb-1">Annual Grand Convention</span>
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900">
+                      1万人規模の熱気！全国大会 ＆ 新タイトル表彰
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    パシフィコ横浜や幕張メッセなどのメガアリーナを貸し切って開催される年次総会「フォーデイズ春」。
+                    新たにタイトル（昇格）を達成したリーダーたちが壇上でスポットライトを浴び、特製ピンバッジや記念品が授与されます。
+                    豪華アーティストによるライブや新製品の初お披露目など、一年で最も盛り上がる記念祭です。
+                  </p>
+                  <div className="p-3.5 rounded-xl bg-cyan-50/80 border border-cyan-100 text-xs text-cyan-900 space-y-1">
+                    <div className="font-bold flex items-center gap-1.5">
+                      <Award className="w-3.5 h-3.5 text-cyan-600" />
+                      <span>仲間と共に喜び合える最高の晴れ舞台</span>
+                    </div>
+                    <p className="text-[11px] text-cyan-800 leading-relaxed">
+                      自分自身の表彰はもちろん、自分がサポートしてきたチームメンバーが登壇する姿に胸を打たれるリーダーが多数います。
+                    </p>
+                  </div>
+                </div>
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="text-slate-500 font-medium">開催地：パシフィコ横浜・幕張メッセ等</span>
+                  <span className="text-cyan-600 font-bold">全会員・同伴者参加可能</span>
+                </div>
+              </div>
+
+              {/* 特典3: ロイヤルドリーマー（LD）制度 ＆ 特別イベント */}
+              <div className="bg-white rounded-3xl border border-rose-200/80 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow space-y-5 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-500 text-white flex items-center justify-center shadow-md">
+                      <Star className="w-6 h-6" />
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-black">
+                      上級会員制度
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold text-rose-600 uppercase tracking-widest block mb-1">Royal Dreamer (LD)</span>
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900">
+                      ロイヤルドリーマー制度 ＆「LDハッピーデイ」
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    グループの健康づくりを牽引するリーダー向けプログラム「ロイヤルドリーマー（通称LD）」。
+                    LD達成者には限定の記念ギフトや専用セミナー、優先レセプションが用意されるほか、「LDハッピーデイ」などの限定企画を通じて、
+                    ビジネスとライフスタイルの両面で上質なサポートが受けられます。
+                  </p>
+                  <div className="p-3.5 rounded-xl bg-rose-50/80 border border-rose-100 text-xs text-rose-900 space-y-1">
+                    <div className="font-bold flex items-center gap-1.5">
+                      <HeartHandshake className="w-3.5 h-3.5 text-rose-600" />
+                      <span>「貴い夢を追う人」を支える特別なコミュニティ</span>
+                    </div>
+                    <p className="text-[11px] text-rose-800 leading-relaxed">
+                      単なる売上規模だけでなく、周囲への貢献度やリーダーシップを称賛する独自の階層制度です。
+                    </p>
+                  </div>
+                </div>
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="text-slate-500 font-medium">対象：リーダー資格取得者</span>
+                  <span className="text-rose-600 font-bold">限定ギフト・専用イベント招待</span>
+                </div>
+              </div>
+
+              {/* 特典4: 会員専用保養所 ＆ 公式アプリ・会報誌 */}
+              <div className="bg-white rounded-3xl border border-emerald-200/80 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow space-y-5 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center shadow-md">
+                      <MapPin className="w-6 h-6" />
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-black">
+                      愛用者全員対象
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold text-emerald-600 uppercase tracking-widest block mb-1">Exclusive Facilities & Media</span>
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900">
+                      専用保養所「プレセド熱海」＆ 月刊会報誌・公式アプリ
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    会員とそのご家族が特別料金で宿泊できる専用保養所（熱海等のリゾート拠点）を完備。チーム合宿や家族旅行に大人気です。
+                    さらに毎月届く会報誌『フォーデイズファン』や公式アプリ「Let&apos;s フォーデイズ」では、
+                    愛用者プレゼント企画、スタンプラリー、限定ポイント交換など日々の愛用を楽しくする仕掛けが満載です。
+                  </p>
+                  <div className="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-100 text-xs text-emerald-900 space-y-1">
+                    <div className="font-bold flex items-center gap-1.5">
+                      <Gift className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>「ビジネスをしない愛用者」もずっと嬉しい特典</span>
+                    </div>
+                    <p className="text-[11px] text-emerald-800 leading-relaxed">
+                      サプリを飲んでいるだけで保養所利用やプレゼント応募ができるため、愛用者の定着率が極めて高い理由となっています。
+                    </p>
+                  </div>
+                </div>
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="text-slate-500 font-medium">施設：静岡・熱海、京都等の提携拠点</span>
+                  <span className="text-emerald-600 font-bold">会員限定価格・アプリ連携</span>
+                </div>
+              </div>
+            </div>
+
+            {/* 公式リンク案内バナー */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+              <div className="space-y-2 text-center md:text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                  <span>最新のイベント・旅行レポートをチェック</span>
+                </div>
+                <h4 className="text-lg sm:text-xl font-black">
+                  フォーデイズ公式 ニュース ＆ イベントレポート
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-2xl">
+                  各年のAGENDA（ハワイ・ドバイ・沖縄等）の開催報告や全国大会の様子、最新のキャンペーン詳細は、フォーデイズ公式ニュース一覧にて写真付きで公開されています。
+                </p>
+              </div>
+              <a
+                href="https://fordays.jp/news/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs sm:text-sm whitespace-nowrap shadow-lg transition-transform hover:scale-105"
+              >
+                <span>公式イベントレポートを見る</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* 第5章: 嘘をつかない「劣位性・注意点・向き不向き」 */}
         <section className="py-16 sm:py-20 bg-rose-50/40 border-b border-rose-200/60">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 border border-rose-300 text-xs font-bold text-rose-800">
                 <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
-                <span>Chapter 4（重要・正直な開示）</span>
+                <span>Chapter 5（重要・正直な開示）</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
                 あえて語る「劣位性・注意点・向き不向き」<br />
@@ -510,7 +711,7 @@ export default function BusinessPage() {
           </div>
         </section>
 
-        {/* 第5章: 正々堂々と取り組むあなたへの応援メッセージ */}
+        {/* 第6章: 正々堂々と取り組むあなたへの応援メッセージ */}
         <section className="py-16 sm:py-24 bg-gradient-to-r from-slate-900 via-slate-950 to-amber-950 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-xs sm:text-sm font-bold text-amber-300">
