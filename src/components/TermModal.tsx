@@ -36,30 +36,30 @@ export const TermModal: React.FC<TermModalProps> = ({ termId, onClose, onSelectT
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in cursor-pointer"
+      className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/70 backdrop-blur-sm animate-fade-in p-3 sm:p-4 flex min-h-full items-center justify-center cursor-pointer"
       onClick={onClose}
     >
       <div 
-        className="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden cursor-default"
+        className="bg-white rounded-3xl max-w-2xl w-full max-h-[90dvh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden cursor-default my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-start justify-between">
+        <div className="px-5 sm:px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-start justify-between flex-shrink-0 sticky top-0 z-10">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-brand-100 text-brand-700 border border-brand-200">
+              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-teal-100 text-teal-800 border border-teal-200">
                 {term.category}
               </span>
               <span className="text-xs text-slate-500 font-mono">生化学・生理学事典</span>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 flex items-baseline gap-2">
-              {term.name}
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 flex flex-wrap items-baseline gap-1.5">
+              <span>{term.name}</span>
               <span className="text-xs font-normal text-slate-500">（{term.kana}）</span>
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
+            className="w-10 h-10 rounded-xl bg-slate-200/70 hover:bg-slate-300 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-colors flex-shrink-0 ml-2"
             aria-label="閉じる"
           >
             <X className="w-5 h-5" />
@@ -67,14 +67,14 @@ export const TermModal: React.FC<TermModalProps> = ({ termId, onClose, onSelectT
         </div>
 
         {/* Body (Scrollable) */}
-        <div className="p-6 overflow-y-auto space-y-6 text-slate-700 text-sm leading-relaxed">
+        <div className="p-5 sm:p-6 overflow-y-auto overscroll-contain space-y-6 text-slate-700 text-sm leading-relaxed flex-grow">
           {/* Wikipedia風概要 */}
           <div>
             <div className="flex items-center gap-2 text-slate-900 font-bold mb-2">
-              <BookOpen className="w-4 h-4 text-brand-600" />
+              <BookOpen className="w-4 h-4 text-teal-600" />
               <h4>定義・概要（Wikipedia解説）</h4>
             </div>
-            <p className="bg-slate-50 p-4 rounded-xl border border-slate-100 text-slate-700">
+            <p className="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-slate-700">
               {term.wikipediaSummary}
             </p>
           </div>
@@ -115,7 +115,7 @@ export const TermModal: React.FC<TermModalProps> = ({ termId, onClose, onSelectT
                     <button
                       key={relId}
                       onClick={() => onSelectTerm(relId)}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-brand-50 hover:text-brand-700 text-xs text-slate-700 transition-colors border border-slate-200"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-xs text-slate-700 transition-colors border border-slate-200 cursor-pointer"
                     >
                       <span>{relTerm.name}</span>
                       <ArrowRight className="w-3 h-3 text-slate-400" />
@@ -128,10 +128,10 @@ export const TermModal: React.FC<TermModalProps> = ({ termId, onClose, onSelectT
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+        <div className="px-5 sm:px-6 py-3.5 bg-slate-50 border-t border-slate-200 flex justify-end flex-shrink-0">
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold rounded-lg transition-colors"
+            className="w-full sm:w-auto px-6 py-2.5 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold rounded-xl transition-colors cursor-pointer"
           >
             閉じる
           </button>

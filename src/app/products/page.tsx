@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   ShieldCheck, Search, Filter, ExternalLink, Sparkles, AlertCircle, 
   CheckCircle2, Info, ChevronDown, ChevronUp, Layers, Award, 
@@ -25,6 +25,20 @@ export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
   const [expandedCritique, setExpandedCritique] = useState<boolean>(true);
+
+  // モーダル表示時のスクロール制御とESCキー
+  useEffect(() => {
+    if (!selectedProduct) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedProduct(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [selectedProduct]);
 
   // 組み合わせガイド用ステート
   const [stackingType, setStackingType] = useState<'age' | 'goal'>('age');
@@ -927,92 +941,100 @@ export default function ProductsPage() {
         {/* 商品詳細モーダル */}
         {selectedProduct && (
           <div
-            className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+            className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 overflow-y-auto p-3 sm:p-4 flex min-h-full items-center justify-center cursor-pointer animate-fade-in"
             onClick={() => setSelectedProduct(null)}
           >
             <div
-              className="bg-white rounded-3xl max-w-2xl w-full p-7 sm:p-10 shadow-2xl relative my-8"
+              className="bg-white rounded-3xl max-w-2xl w-full max-h-[90dvh] flex flex-col shadow-2xl relative overflow-hidden my-auto cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                onClick={() => setSelectedProduct(null)}
-                className="absolute top-6 right-6 p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="flex flex-col sm:flex-row gap-6">
-                <div className="w-full sm:w-48 h-48 bg-slate-50 rounded-2xl flex items-center justify-center p-4 border border-slate-100 flex-shrink-0">
-                  {selectedProduct.imageUrl ? (
-                    <img
-                      src={selectedProduct.imageUrl}
-                      alt={selectedProduct.title}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  ) : (
-                    <ShoppingBag className="w-12 h-12 text-slate-300" />
-                  )}
+              {/* 固定ヘッダー */}
+              <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between flex-shrink-0 bg-white/95 sticky top-0 z-10">
+                <div className="inline-block text-[11px] font-bold text-teal-800 bg-teal-50 px-3 py-1 rounded-full border border-teal-200">
+                  {selectedProduct.category}
                 </div>
-
-                <div className="flex-grow space-y-2">
-                  <div className="inline-block text-[11px] font-bold text-teal-800 bg-teal-50 px-3 py-1 rounded-full border border-teal-200">
-                    {selectedProduct.category}
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
-                    {selectedProduct.title}
-                  </h3>
-                  <p className="text-xs text-slate-500">
-                    {selectedProduct.subTitle}
-                  </p>
-                  <div className="text-sm font-bold text-slate-900 pt-1">
-                    価格: <span className="text-teal-700 font-extrabold text-lg">{selectedProduct.price}</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
-                    {selectedProduct.description || 'フォーデイズ独自の研究・特許原料を活かしたコンディショニング製品です。'}
-                  </p>
-                </div>
+                <button
+                  onClick={() => setSelectedProduct(null)}
+                  className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-colors flex-shrink-0 ml-2"
+                  aria-label="閉じる"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
-              {CATEGORY_CRITIQUES[selectedProduct.category] && (
-                <div className="mt-8 pt-6 border-t border-slate-100 space-y-4">
-                  <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-teal-600" />
-                    <span>このカテゴリーの科学的批評 ＆ エビデンス検証</span>
-                  </h4>
+              {/* スクロール可能なボディ */}
+              <div className="p-5 sm:p-8 overflow-y-auto overscroll-contain flex-grow space-y-6">
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="w-full sm:w-48 h-48 bg-slate-50 rounded-2xl flex items-center justify-center p-4 border border-slate-100 flex-shrink-0">
+                    {selectedProduct.imageUrl ? (
+                      <img
+                        src={selectedProduct.imageUrl}
+                        alt={selectedProduct.title}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    ) : (
+                      <ShoppingBag className="w-12 h-12 text-slate-300" />
+                    )}
+                  </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                    <div className="p-4 bg-teal-50/70 border border-teal-200/80 rounded-2xl space-y-1">
-                      <div className="font-bold text-teal-900">なぜ効果的なのか</div>
-                      <p className="text-slate-700 leading-relaxed text-[11px]">
-                        {CATEGORY_CRITIQUES[selectedProduct.category].whyEffective}
-                      </p>
+                  <div className="flex-grow space-y-2">
+                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
+                      {selectedProduct.title}
+                    </h3>
+                    <p className="text-xs text-slate-500">
+                      {selectedProduct.subTitle}
+                    </p>
+                    <div className="text-sm font-bold text-slate-900 pt-1">
+                      価格: <span className="text-teal-700 font-extrabold text-lg">{selectedProduct.price}</span>
                     </div>
-
-                    <div className="p-4 bg-cyan-50/70 border border-cyan-200/80 rounded-2xl space-y-1">
-                      <div className="font-bold text-cyan-900">一般品との違い（独自性）</div>
-                      <p className="text-slate-700 leading-relaxed text-[11px]">
-                        {CATEGORY_CRITIQUES[selectedProduct.category].uniqueStrengths}
-                      </p>
-                    </div>
-
-                    <div className="p-4 bg-amber-50/70 border border-amber-200/80 rounded-2xl space-y-1">
-                      <div className="font-bold text-amber-900">一般品と同じ部分（客観批評）</div>
-                      <p className="text-slate-700 leading-relaxed text-[11px]">
-                        {CATEGORY_CRITIQUES[selectedProduct.category].commonPoints}
-                      </p>
-                    </div>
-
-                    <div className="p-4 bg-rose-50/70 border border-rose-200/80 rounded-2xl space-y-1">
-                      <div className="font-bold text-rose-900">不十分な点・限界</div>
-                      <p className="text-slate-700 leading-relaxed text-[11px]">
-                        {CATEGORY_CRITIQUES[selectedProduct.category].limitations}
-                      </p>
-                    </div>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                      {selectedProduct.description || 'フォーデイズ独自の研究・特許原料を活かしたコンディショニング製品です。'}
+                    </p>
                   </div>
                 </div>
-              )}
 
-              <div className="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+                {CATEGORY_CRITIQUES[selectedProduct.category] && (
+                  <div className="pt-6 border-t border-slate-100 space-y-4">
+                    <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                      <ShieldCheck className="w-4 h-4 text-teal-600" />
+                      <span>このカテゴリーの科学的批評 ＆ エビデンス検証</span>
+                    </h4>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                      <div className="p-4 bg-teal-50/70 border border-teal-200/80 rounded-2xl space-y-1">
+                        <div className="font-bold text-teal-900">なぜ効果的なのか</div>
+                        <p className="text-slate-700 leading-relaxed text-[11px]">
+                          {CATEGORY_CRITIQUES[selectedProduct.category].whyEffective}
+                        </p>
+                      </div>
+
+                      <div className="p-4 bg-cyan-50/70 border border-cyan-200/80 rounded-2xl space-y-1">
+                        <div className="font-bold text-cyan-900">一般品との違い（独自性）</div>
+                        <p className="text-slate-700 leading-relaxed text-[11px]">
+                          {CATEGORY_CRITIQUES[selectedProduct.category].uniqueStrengths}
+                        </p>
+                      </div>
+
+                      <div className="p-4 bg-amber-50/70 border border-amber-200/80 rounded-2xl space-y-1">
+                        <div className="font-bold text-amber-900">一般品と同じ部分（客観批評）</div>
+                        <p className="text-slate-700 leading-relaxed text-[11px]">
+                          {CATEGORY_CRITIQUES[selectedProduct.category].commonPoints}
+                        </p>
+                      </div>
+
+                      <div className="p-4 bg-rose-50/70 border border-rose-200/80 rounded-2xl space-y-1">
+                        <div className="font-bold text-rose-900">不十分な点・限界</div>
+                        <p className="text-slate-700 leading-relaxed text-[11px]">
+                          {CATEGORY_CRITIQUES[selectedProduct.category].limitations}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* 固定フッター */}
+              <div className="p-4 sm:p-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 flex-shrink-0 bg-slate-50">
                 <Link
                   href="/evidence"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-700 hover:text-cyan-900"
@@ -1021,13 +1043,13 @@ export default function ProductsPage() {
                   <span>特許公報原本・論文一覧を確認する</span>
                 </Link>
 
-                <div className="flex items-center gap-2.5">
+                <div className="flex flex-wrap items-center justify-end gap-2.5 w-full sm:w-auto">
                   {selectedProduct.officialUrl && (
                     <a
                       href={selectedProduct.officialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors inline-flex items-center gap-1.5"
+                      className="px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors inline-flex items-center gap-1.5 flex-1 sm:flex-initial justify-center"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>公式サイト詳細</span>
@@ -1038,12 +1060,18 @@ export default function ProductsPage() {
                       href={selectedProduct.shopUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold transition-all shadow-xs inline-flex items-center gap-1.5"
+                      className="px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold transition-all shadow-xs inline-flex items-center gap-1.5 flex-1 sm:flex-initial justify-center"
                     >
                       <ShoppingBag className="w-4 h-4" />
-                      <span>公式ショップで購入</span>
+                      <span>公式ショップ</span>
                     </a>
                   )}
+                  <button
+                    onClick={() => setSelectedProduct(null)}
+                    className="px-4 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold transition-colors cursor-pointer"
+                  >
+                    閉じる
+                  </button>
                 </div>
               </div>
             </div>

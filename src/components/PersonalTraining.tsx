@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Dumbbell, ShieldCheck, HeartPulse, UserCheck, Calendar, Send, CheckCircle2, MessageSquare, Phone, Clock, ArrowRight } from 'lucide-react';
+import { Dumbbell, ShieldCheck, HeartPulse, UserCheck, Calendar, Send, CheckCircle2, MessageSquare, Phone, Clock, ArrowRight, X } from 'lucide-react';
 
 interface PersonalTrainingProps {
   isModalOpen: boolean;
@@ -150,120 +150,138 @@ export const PersonalTraining: React.FC<PersonalTrainingProps> = ({ isModalOpen,
       {/* Modal Form */}
       {isModalOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in cursor-pointer"
+          className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm animate-fade-in p-3 sm:p-4 flex min-h-full items-center justify-center cursor-pointer"
           onClick={onCloseModal}
         >
           <div 
-            className="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative text-left cursor-default"
+            className="bg-slate-900 border border-slate-700 rounded-3xl max-w-lg w-full max-h-[90dvh] shadow-2xl relative text-left cursor-default flex flex-col overflow-hidden my-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={onCloseModal}
-              className="absolute top-4 right-4 text-slate-400 hover:text-white text-xl p-2"
-            >
-              ✕
-            </button>
-
-            {!isSubmitted ? (
+            {/* 固定ヘッダー */}
+            <div className="p-5 sm:p-6 border-b border-slate-800 flex items-start justify-between flex-shrink-0 bg-slate-900/95 sticky top-0 z-10">
               <div>
                 <div className="flex items-center gap-2 text-teal-400 text-xs font-bold mb-1">
                   <UserCheck className="w-4 h-4" />
                   <span>理学療法士 直通相談フォーム</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">
+                <h3 className="text-lg sm:text-xl font-bold text-white">
                   無料カウンセリング・体験相談
                 </h3>
-                <p className="text-xs text-slate-400 mb-6">
-                  お身体の状態やFORDAYS製品に関するご質問など、お気軽にお寄せください。
-                </p>
+              </div>
+              <button
+                onClick={onCloseModal}
+                className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors flex-shrink-0 ml-2"
+                aria-label="閉じる"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4 text-xs sm:text-sm">
-                  <div>
-                    <label className="block text-slate-300 font-medium mb-1">お名前 *</label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="山田 太郎"
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
-                    />
-                  </div>
+            {/* スクロール可能なボディ */}
+            <div className="p-5 sm:p-7 overflow-y-auto overscroll-contain flex-grow">
+              {!isSubmitted ? (
+                <div>
+                  <p className="text-xs text-slate-400 mb-5">
+                    お身体の状態やFORDAYS製品に関するご質問など、お気軽にお寄せください。専門職が丁寧に対応いたします。
+                  </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <form onSubmit={handleSubmit} className="space-y-4 text-xs sm:text-sm">
                     <div>
-                      <label className="block text-slate-300 font-medium mb-1">メールアドレス *</label>
+                      <label className="block text-slate-300 font-medium mb-1">お名前 *</label>
                       <input
-                        type="email"
+                        type="text"
                         required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="example@mail.com"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="山田 太郎"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
                       />
                     </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-slate-300 font-medium mb-1">メールアドレス *</label>
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          placeholder="example@mail.com"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-slate-300 font-medium mb-1">電話番号</label>
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          placeholder="090-1234-5678"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        />
+                      </div>
+                    </div>
+
                     <div>
-                      <label className="block text-slate-300 font-medium mb-1">電話番号</label>
-                      <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="090-1234-5678"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      />
+                      <label className="block text-slate-300 font-medium mb-1">FORDAYS製品のご利用状況</label>
+                      <select
+                        value={formData.fordaysInterest}
+                        onChange={(e) => setFormData({ ...formData, fordaysInterest: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      >
+                        <option value="興味がある・使ってみたい">興味がある・これから使ってみたい</option>
+                        <option value="現在利用中（効果的な運動法を知りたい）">現在利用中（効果的な運動法を知りたい）</option>
+                        <option value="まずはエビデンスや運動の相談だけしたい">まずはエビデンスや運動の相談だけしたい</option>
+                      </select>
                     </div>
-                  </div>
 
-                  <div>
-                    <label className="block text-slate-300 font-medium mb-1">FORDAYS製品のご利用状況</label>
-                    <select
-                      value={formData.fordaysInterest}
-                      onChange={(e) => setFormData({ ...formData, fordaysInterest: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
-                    >
-                      <option value="興味がある・使ってみたい">興味がある・これから使ってみたい</option>
-                      <option value="現在利用中（効果的な運動法を知りたい）">現在利用中（効果的な運動法を知りたい）</option>
-                      <option value="まずはエビデンスや運動の相談だけしたい">まずはエビデンスや運動の相談だけしたい</option>
-                    </select>
-                  </div>
+                    <div>
+                      <label className="block text-slate-300 font-medium mb-1">お身体のお悩み・ご質問</label>
+                      <textarea
+                        rows={3}
+                        value={formData.concerns}
+                        onChange={(e) => setFormData({ ...formData, concerns: e.target.value })}
+                        placeholder="例：最近つまずきやすくなった、膝に負担をかけずに筋肉をつけたい、など"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      ></textarea>
+                    </div>
 
-                  <div>
-                    <label className="block text-slate-300 font-medium mb-1">お身体のお悩み・ご質問</label>
-                    <textarea
-                      rows={3}
-                      value={formData.concerns}
-                      onChange={(e) => setFormData({ ...formData, concerns: e.target.value })}
-                      placeholder="例：最近つまずきやすくなった、膝に負担をかけずに筋肉をつけたい、など"
-                      className="w-full px-3.5 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-3 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-400 text-slate-950 font-bold text-sm hover:from-teal-300 hover:to-cyan-300 transition-all shadow-lg flex items-center justify-center gap-2"
-                  >
-                    <Send className="w-4 h-4" />
-                    <span>送信する（無料）</span>
-                  </button>
-                </form>
-              </div>
-            ) : (
-              <div className="py-8 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center mx-auto border border-teal-500/40">
-                  <CheckCircle2 className="w-8 h-8" />
+                    <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                      <button
+                        type="submit"
+                        className="w-full py-3.5 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-400 text-slate-950 font-bold text-sm hover:from-teal-300 hover:to-cyan-300 transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        <Send className="w-4 h-4" />
+                        <span>送信する（無料相談）</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={onCloseModal}
+                        className="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors cursor-pointer"
+                      >
+                        閉じる
+                      </button>
+                    </div>
+                  </form>
                 </div>
-                <h4 className="text-xl font-bold text-white">お問い合わせを受け付けました</h4>
-                <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
-                  ご連絡ありがとうございます。理学療法士より、ご入力いただいた連絡先宛てに順次ご返信いたします。
-                </p>
-                <button
-                  onClick={onCloseModal}
-                  className="px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 transition-colors"
-                >
-                  閉じる
-                </button>
-              </div>
-            )}
+              ) : (
+                <div className="py-8 text-center space-y-4">
+                  <div className="w-16 h-16 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center mx-auto border border-teal-500/40">
+                    <CheckCircle2 className="w-8 h-8" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white">お問い合わせを受け付けました</h4>
+                  <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
+                    ご連絡ありがとうございます。理学療法士より、ご入力いただいた連絡先宛てに順次ご返信いたします。
+                  </p>
+                  <button
+                    onClick={onCloseModal}
+                    className="px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 transition-colors"
+                  >
+                    閉じる
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
