@@ -6,6 +6,7 @@ import { HealthHero } from '@/components/HealthHero';
 import { SelfEffortAndSynergySection } from '@/components/SelfEffortAndSynergySection';
 import { SleepBiohackSection } from '@/components/SleepBiohackSection';
 import { PillarsOfHealthSection } from '@/components/PillarsOfHealthSection';
+import { ImmunityMasterySection } from '@/components/ImmunityMasterySection';
 import { HealthComparisonMatrix } from '@/components/HealthComparisonMatrix';
 import { HealthCheckDiagnostics } from '@/components/HealthCheckDiagnostics';
 import { PersonalTraining } from '@/components/PersonalTraining';
@@ -43,7 +44,7 @@ export default function HealthPage() {
             <span className="hidden sm:inline text-slate-400">現在地:</span>
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-indigo-950/80 border border-indigo-700/60 text-indigo-300 font-medium">
               <HeartPulse className="w-3.5 h-3.5 text-indigo-400" />
-              最先端健康科学 ＆ 睡眠・運動・休養・核酸バイオハック
+              最先端健康科学 ＆ 睡眠・運動・休養・核酸・統合免疫
             </span>
           </div>
         </div>
@@ -61,6 +62,9 @@ export default function HealthPage() {
 
         {/* 4大柱（運動・休養・栄養・ストレス）詳細エビデンス */}
         <PillarsOfHealthSection />
+
+        {/* 【特記事項】免疫はどう位置づけられるか？（5大要素の総決算・統合防衛シールド） */}
+        <ImmunityMasterySection />
 
         {/* 比較マトリックス ＆ 24時間バイオハックルーティン */}
         <HealthComparisonMatrix />

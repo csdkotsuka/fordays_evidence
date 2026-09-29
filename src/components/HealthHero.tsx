@@ -221,25 +221,32 @@ export const HealthHero: React.FC = () => {
         </div>
 
         {/* 下部CTAボタン群 */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 mt-10">
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-10">
           <a
             href="#role-division-section"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-teal-500/20 transition-all hover:scale-103 active:scale-98"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-teal-500/20 transition-all hover:scale-103 active:scale-98"
           >
             <ShieldCheck className="w-4 h-4 text-slate-950" />
-            <span>自力努力（土台） × FORDAYS（ブースト）の役割分担</span>
+            <span>自力努力（土台） × FORDAYS（ブースト）</span>
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
+            href="#immunity-section"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-emerald-950 hover:bg-emerald-900 text-emerald-200 border border-emerald-500/50 font-bold text-xs sm:text-sm transition-all hover:scale-102"
+          >
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>【特記事項】免疫の位置づけ</span>
+          </a>
+          <a
             href="#sleep-section"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-indigo-900/90 hover:bg-indigo-800 text-indigo-100 border border-indigo-500/50 font-bold text-xs sm:text-sm transition-all hover:scale-102"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-indigo-900/90 hover:bg-indigo-800 text-indigo-100 border border-indigo-500/50 font-bold text-xs sm:text-sm transition-all hover:scale-102"
           >
             <Moon className="w-4 h-4 text-indigo-300" />
-            <span>最先端睡眠科学を見る</span>
+            <span>最先端睡眠科学</span>
           </a>
           <a
             href="#diagnostics-section"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 font-bold text-xs sm:text-sm transition-all hover:scale-102"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 font-bold text-xs sm:text-sm transition-all hover:scale-102"
           >
             <Activity className="w-4 h-4 text-rose-400" />
             <span>健康負債チェック</span>
