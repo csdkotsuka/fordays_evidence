@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { 
   X, Home, Briefcase, ShieldCheck, Dumbbell, 
-  HelpCircle, ChevronRight, Sparkles, PhoneCall, ExternalLink, ShoppingBag 
+  HelpCircle, ChevronRight, Sparkles, PhoneCall, ExternalLink, ShoppingBag, HeartPulse, Moon
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -48,6 +48,14 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, onClose, onOpe
       icon: Home,
       badge: '初心者向け',
       badgeColor: 'bg-teal-100 text-teal-800 border-teal-200',
+    },
+    {
+      title: '健康科学 ＆ 睡眠バイオハック',
+      subtitle: '睡眠・運動・休養・核酸栄養・メンタルの5大健康科学',
+      href: '/health',
+      icon: HeartPulse,
+      badge: '睡眠・最先端科学',
+      badgeColor: 'bg-indigo-100 text-indigo-900 border-indigo-300 font-bold',
     },
     {
       title: 'ビジネスガイド（誠実に取り組む方へ）',

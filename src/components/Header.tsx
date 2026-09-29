@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ShieldCheck, Dumbbell, Menu, Sparkles, ChevronRight, Briefcase, ShoppingBag } from 'lucide-react';
+import { ShieldCheck, Dumbbell, Menu, Sparkles, ChevronRight, Briefcase, ShoppingBag, HeartPulse } from 'lucide-react';
 import Link from 'next/link';
 import { SidebarMenu } from '@/components/SidebarMenu';
 
@@ -52,10 +52,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
 
             {/* 右側: クイックリンク（ビジネス） ＋ CTA */}
             <div className="flex items-center gap-2.5 sm:gap-3">
+              {/* 健康科学・睡眠バイオハックへのクイックリンク */}
+              <Link
+                href="/health"
+                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-indigo-900 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200/80 transition-all hover:scale-102"
+              >
+                <HeartPulse className="w-3.5 h-3.5 text-indigo-600" />
+                <span>健康科学 ＆ 睡眠</span>
+              </Link>
+
               {/* 洗顔・メイク手順へのクイックリンク */}
               <Link
                 href="/skincare-routine"
-                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-200/80 transition-all hover:scale-102"
+                className="hidden 2xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-200/80 transition-all hover:scale-102"
               >
                 <Sparkles className="w-3.5 h-3.5 text-purple-600" />
                 <span>洗顔・メイク手順</span>

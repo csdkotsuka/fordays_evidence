@@ -36,11 +36,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPTModal }) => {
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">サイトマップ</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="/" className="hover:text-cyan-400 transition-colors">はじめての方へ（ホーム）</a></li>
-              <li><a href="/#about-fordays" className="hover:text-cyan-400 transition-colors">FORDAYSとは？</a></li>
-              <li><a href="/#what-is-nucleic-acid" className="hover:text-cyan-400 transition-colors">核酸とは？（DNA・RNA）</a></li>
+              <li><a href="/health" className="text-indigo-300 font-bold hover:text-indigo-200 transition-colors">健康科学 ＆ 睡眠バイオハック</a></li>
+              <li><a href="/products" className="text-teal-300 font-bold hover:text-teal-200 transition-colors">製品カタログ ＆ 科学的批評</a></li>
+              <li><a href="/skincare-routine" className="text-purple-300 font-bold hover:text-purple-200 transition-colors">洗顔・スキンケア ＆ メイク手順</a></li>
               <li><a href="/evidence" className="text-cyan-300 font-bold hover:text-cyan-200 transition-colors">エビデンス検証ポータル（特許・論文原本）</a></li>
               <li><a href="/business" className="text-amber-300 font-bold hover:text-amber-200 transition-colors">ビジネス真実ガイド（特商法・他社比較）</a></li>
-              <li><a href="/exercise-prescription" className="text-teal-300 font-bold hover:text-teal-200 transition-colors">40代〜90代の運動処方学</a></li>
+              <li><a href="/exercise-prescription" className="text-emerald-300 font-bold hover:text-emerald-200 transition-colors">40代〜90代の運動処方学</a></li>
               <li>
                 <button
                   onClick={onOpenPTModal}

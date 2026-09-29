@@ -34,18 +34,54 @@ export const EvidenceBridgeBanner: React.FC<EvidenceBridgeBannerProps> = ({ onOp
           </p>
         </div>
 
-        {/* 3つの詳細ポータルカード */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* 4つの詳細ポータルカード（健康科学・睡眠、エビデンス、製品カタログ、運動処方） */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* カード0: 健康科学 ＆ 睡眠バイオハック（新設・大注目） */}
+          <div className="p-6 rounded-3xl bg-gradient-to-b from-indigo-950/90 via-slate-900 to-slate-900 border-2 border-indigo-500/50 shadow-2xl flex flex-col justify-between space-y-4 hover:border-indigo-400 transition-all hover:scale-[1.02] group">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="px-2.5 py-0.5 rounded-full bg-indigo-500/30 text-indigo-300 text-[10px] font-bold border border-indigo-400/40">
+                  最先端バイオハック
+                </span>
+                <span className="text-[10px] text-indigo-300 font-mono">睡眠・5大基盤</span>
+              </div>
+              <h3 className="text-base sm:text-lg font-black text-white group-hover:text-indigo-300 transition-colors">
+                健康科学 ＆ 睡眠バイオハック
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                睡眠（グリンパティック）・運動・休養・核酸栄養・メンタル。5大要素の最先端エビデンスと老化リスク、特許核酸による超回復。
+              </p>
+              <ul className="space-y-1.5 text-xs text-slate-300">
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0" />
+                  <span>脳のゴミ掃除（グリンパティック）</span>
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0" />
+                  <span>特許オートファジー ＆ 酸化修復</span>
+                </li>
+              </ul>
+            </div>
+
+            <Link
+              href="/health"
+              className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-2xl bg-gradient-to-r from-indigo-500 via-cyan-500 to-emerald-500 hover:from-indigo-400 hover:to-emerald-400 text-white font-black text-xs transition-all shadow-md shadow-indigo-500/25"
+            >
+              <span>健康科学 ＆ 睡眠を見る</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+
           {/* カード1: エビデンス検証ポータル */}
-          <div className="p-7 rounded-3xl bg-slate-800/80 border-2 border-cyan-500/40 shadow-2xl flex flex-col justify-between space-y-5 hover:border-cyan-400 transition-all hover:scale-[1.01] group">
-            <div className="space-y-3.5">
+          <div className="p-6 rounded-3xl bg-slate-800/80 border-2 border-cyan-500/40 shadow-2xl flex flex-col justify-between space-y-4 hover:border-cyan-400 transition-all hover:scale-[1.01] group">
+            <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="px-2.5 py-0.5 rounded-full bg-cyan-400/20 text-cyan-300 text-[10px] font-bold border border-cyan-400/30">
                   深掘り専門ポータル
                 </span>
                 <span className="text-[10px] text-slate-400 font-mono">原本付</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-black text-white group-hover:text-cyan-300 transition-colors">
+              <h3 className="text-base sm:text-lg font-black text-white group-hover:text-cyan-300 transition-colors">
                 エビデンス検証ポータル
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
@@ -65,7 +101,7 @@ export const EvidenceBridgeBanner: React.FC<EvidenceBridgeBannerProps> = ({ onOp
 
             <Link
               href="/evidence"
-              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-black text-xs sm:text-sm transition-all shadow-md shadow-cyan-500/20"
+              className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-black text-xs transition-all shadow-md shadow-cyan-500/20"
             >
               <span>ポータルを詳しく見る</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -73,35 +109,35 @@ export const EvidenceBridgeBanner: React.FC<EvidenceBridgeBannerProps> = ({ onOp
           </div>
 
           {/* カード2: 全製品カタログ ＆ 科学的批評 */}
-          <div className="p-7 rounded-3xl bg-slate-800/80 border-2 border-teal-500/40 shadow-2xl flex flex-col justify-between space-y-5 hover:border-teal-400 transition-all hover:scale-[1.01] group">
-            <div className="space-y-3.5">
+          <div className="p-6 rounded-3xl bg-slate-800/80 border-2 border-teal-500/40 shadow-2xl flex flex-col justify-between space-y-4 hover:border-teal-400 transition-all hover:scale-[1.01] group">
+            <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="px-2.5 py-0.5 rounded-full bg-teal-400/20 text-teal-300 text-[10px] font-bold border border-teal-400/30">
                   全79商品完全網羅
                 </span>
                 <span className="text-[10px] text-teal-300 font-mono">重複ゼロ</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-black text-white group-hover:text-teal-300 transition-colors">
+              <h3 className="text-base sm:text-lg font-black text-white group-hover:text-teal-300 transition-colors">
                 製品カタログ ＆ 科学的批評
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                公式サイトとオンラインショップを完全突合。「なぜ効果的なのか」と「一般品との違い」、そして「一般品と同じ部分・限界」まで客観検証。
+                公式サイトとオンラインショップを完全突合。「なぜ効果的なのか」と「一般品との違い」、そして限界まで客観検証。
               </p>
               <ul className="space-y-1.5 text-xs text-slate-300">
                 <li className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0" />
-                  <span>2大サイト全79品目をカテゴリー整理</span>
+                  <span>全79品目をカテゴリー整理</span>
                 </li>
                 <li className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0" />
-                  <span>化粧品・サプリの一般品との対比批評</span>
+                  <span>一般品との対比批評</span>
                 </li>
               </ul>
             </div>
 
             <Link
               href="/products"
-              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-black text-xs sm:text-sm transition-all shadow-md shadow-teal-500/20"
+              className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-black text-xs transition-all shadow-md shadow-teal-500/20"
             >
               <span>製品カタログ・批評を見る</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -109,19 +145,19 @@ export const EvidenceBridgeBanner: React.FC<EvidenceBridgeBannerProps> = ({ onOp
           </div>
 
           {/* カード3: 運動処方学ガイド */}
-          <div className="p-7 rounded-3xl bg-slate-800/80 border-2 border-emerald-500/40 shadow-2xl flex flex-col justify-between space-y-5 hover:border-emerald-400 transition-all hover:scale-[1.01] group">
-            <div className="space-y-3.5">
+          <div className="p-6 rounded-3xl bg-slate-800/80 border-2 border-emerald-500/40 shadow-2xl flex flex-col justify-between space-y-4 hover:border-emerald-400 transition-all hover:scale-[1.01] group">
+            <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-400/20 text-emerald-300 text-[10px] font-bold border border-emerald-400/30">
                   臨床運動学
                 </span>
                 <span className="text-[10px] text-slate-400 font-mono">40代〜90代</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-black text-white group-hover:text-emerald-300 transition-colors">
+              <h3 className="text-base sm:text-lg font-black text-white group-hover:text-emerald-300 transition-colors">
                 安全な運動処方 ＆ 筋肉ケア
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                「何歳からでも筋肉は育つ」。MVC測定の重要性、怪我をしない安全な5大自宅エクササイズとBCAA・核酸ドリンクの摂取タイミング。
+                「何歳からでも筋肉は育つ」。MVC測定、安全な5大自宅エクササイズとBCAA・核酸ドリンクの摂取タイミング。
               </p>
               <ul className="space-y-1.5 text-xs text-slate-300">
                 <li className="flex items-center gap-1.5">
@@ -130,14 +166,14 @@ export const EvidenceBridgeBanner: React.FC<EvidenceBridgeBannerProps> = ({ onOp
                 </li>
                 <li className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-                  <span>BCAA ＆ 核酸の運動連動プロトコル</span>
+                  <span>BCAA ＆ 核酸の連動プロトコル</span>
                 </li>
               </ul>
             </div>
 
             <Link
               href="/exercise-prescription"
-              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-xs sm:text-sm transition-all shadow-md shadow-emerald-500/20"
+              className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-xs transition-all shadow-md shadow-emerald-500/20"
             >
               <span>臨床運動処方を見る</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
