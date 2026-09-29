@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Header } from '@/components/Header';
 import { HealthHero } from '@/components/HealthHero';
+import { SelfEffortAndSynergySection } from '@/components/SelfEffortAndSynergySection';
 import { SleepBiohackSection } from '@/components/SleepBiohackSection';
 import { PillarsOfHealthSection } from '@/components/PillarsOfHealthSection';
 import { HealthComparisonMatrix } from '@/components/HealthComparisonMatrix';
@@ -51,6 +52,9 @@ export default function HealthPage() {
       <main className="flex-grow">
         {/* ヒーローセクション */}
         <HealthHero />
+
+        {/* 【本質メッセージ】自力努力（土台） × FORDAYS（細胞ブースト）の役割分担 */}
+        <SelfEffortAndSynergySection />
 
         {/* 睡眠科学・グリンパティック深掘り特集 */}
         <SleepBiohackSection />

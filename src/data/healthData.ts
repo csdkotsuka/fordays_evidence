@@ -657,3 +657,246 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
     riskPoint: 15
   }
 ];
+
+export interface HabitRoleDivision {
+  pillarId: 'sleep' | 'exercise' | 'recovery' | 'nutrition' | 'stress';
+  pillarName: string;
+  pillarEng: string;
+  themeColor: string;
+  selfEffortHeading: string;
+  selfEffortActions: {
+    action: string;
+    whyEssential: string;
+    practicalTip: string;
+  }[];
+  fordaysAssistHeading: string;
+  fordaysAssistRole: {
+    whySelfAloneIsHard: string;
+    howFordaysHelps: string;
+    patentsOrIngredients: string;
+  };
+}
+
+export const HABIT_ROLE_DIVISIONS: HabitRoleDivision[] = [
+  {
+    pillarId: 'sleep',
+    pillarName: '睡眠（休養と脳内クレンジング）',
+    pillarEng: 'Sleep Discipline vs Biological Clearance',
+    themeColor: 'indigo',
+    selfEffortHeading: 'あなたが自分の意志と習慣でやるべきこと（土台）',
+    selfEffortActions: [
+      {
+        action: '就寝前60分の「スマホ・PC・ブルーライト断ち」',
+        whyEssential: 'ブルーライトを浴びると脳が昼間と誤認し、睡眠ホルモン「メラトニン」の分泌が完全に止まってしまいます。どれほど良いサプリを飲んでも光の刺激には勝てません。',
+        practicalTip: 'ベッドの周りにスマホ充電器を置かず、間接照明やナイトモードを徹底する。'
+      },
+      {
+        action: '起床後30分以内の「朝日浴」と起床時刻の固定',
+        whyEssential: '体内時計（サーカディアンリズム）のリセットは日光でしか行えません。朝の光が約15時間後の眠気をセットします。',
+        practicalTip: '起きたらカーテンを全開にし、窓際で1分深呼吸する習慣をつける。'
+      },
+      {
+        action: '就寝90分前の「ぬるめ（39〜40℃）の入浴」',
+        whyEssential: '深部体温が一度上がり、そこから急激に下がる過程で強い眠気が訪れます。シャワーだけでは深睡眠は作れません。',
+        practicalTip: '湯船に15分浸かることをルーティン化する。'
+      }
+    ],
+    fordaysAssistHeading: '自力では解決できず、FORDAYSが細胞レベルで助ける領域',
+    fordaysAssistRole: {
+      whySelfAloneIsHard: 'いくら早く寝ても、加齢とともに脳内の老廃物（アミロイドβ等）を分解する力や、夜間に傷ついたDNA・タンパク質を修復する「材料（核酸・酵素活性）」は体内で激減しています。',
+      howFordaysHelps: '就寝前に「ナチュラル DNコラーゲン」を飲むことで、睡眠中の成長ホルモン分泌に合わせて特許核酸（FCore-2021）とオートファジーシグナル（特許第7627991号）を一気に供給。睡眠中の細胞洗浄と修復スピードを何倍にも引き上げます。',
+      patentsOrIngredients: '特許第6791696号（脳内老廃物抑制） / 特許第7627991号（オートファジー促進）'
+    }
+  },
+  {
+    pillarId: 'exercise',
+    pillarName: '運動（筋肉・代謝・毛細血管）',
+    pillarEng: 'Physical Effort vs Muscle Recovery',
+    themeColor: 'emerald',
+    selfEffortHeading: 'あなたが自分の意志と習慣でやるべきこと（土台）',
+    selfEffortActions: [
+      {
+        action: '「自分の筋肉を収縮させる」メカニカルストレスの実践',
+        whyEssential: '筋肉は外から与えられる刺激（自重スクワット、階段昇降、早歩き）によってしか筋線維の代謝シグナル（マイオカイン分泌）を起こせません。飲むだけで筋肉がつく薬は存在しません。',
+        practicalTip: 'エスカレーターを使わず階段を使う、1日20回×2回の椅子スクワットから始める。'
+      },
+      {
+        action: '日中座りっぱなしを防ぐ「30分に1回の立ち上がり」',
+        whyEssential: '長時間座り続けると下半身の血流が滞り、インスリン抵抗性が急上昇します。こまめな足踏みや背伸びが血管を守ります。',
+        practicalTip: 'タイマーをセットし、30分ごとに立ち上がって軽くふくらはぎを伸ばす。'
+      },
+      {
+        action: '関節や腰に負担をかけない「正しいフォームと姿勢」',
+        whyEssential: '間違ったフォームでの無理な運動は関節軟骨の摩耗を招きます。正しいアライメントを意識した丁寧な動作が不可欠です。',
+        practicalTip: '理学療法士の指導や動画で背筋を伸ばし、膝がつま先より前に出ないスクワットを覚える。'
+      }
+    ],
+    fordaysAssistHeading: '自力では解決できず、FORDAYSが細胞レベルで助ける領域',
+    fordaysAssistRole: {
+      whySelfAloneIsHard: 'せっかく運動しても、40代以降は「筋タンパク質の分解速度」が合成速度を上回りやすく（アナボリック抵抗性）、激しい筋肉痛や疲労で運動が続かなくなる壁があります。',
+      howFordaysHelps: '「アミノアクティ BCAA＆グルタミンDX」と「ナチュラル DNコラーゲン」を運動前後に合わせることで、特許第7442308号（筋肉萎縮抑制）の作用が働き、筋分解を瞬時にブロック。毛細血管を拡張（特許第7216260号）させて翌日の疲労感を劇的に軽減します。',
+      patentsOrIngredients: '特許第7442308号（筋肉萎縮抑制） / 特許第7216260号（血管内皮機能改善）'
+    }
+  },
+  {
+    pillarId: 'nutrition',
+    pillarName: '食事・栄養（細胞の材料と代謝）',
+    pillarEng: 'Dietary Discipline vs Nucleic Acid Salvage',
+    themeColor: 'amber',
+    selfEffortHeading: 'あなたが自分の意志と習慣でやるべきこと（土台）',
+    selfEffortActions: [
+      {
+        action: '三食の「三大栄養素（タンパク質・脂質・炭水化物）」の土台作り',
+        whyEssential: 'サプリメントは「補助食品」です。良質なタンパク質（魚、卵、大豆）、緑黄色野菜、海藻類、適度な炭水化物という基礎的な食事があって初めて機能します。',
+        practicalTip: '「毎食手のひらサイズのタンパク質」と「毎食小鉢1つの野菜」を必ず確保する。'
+      },
+      {
+        action: '「一口30回よく噛んで食べる」咀嚼習慣',
+        whyEssential: 'よく噛むことで唾液酵素アミラーゼやペルオキシダーゼが分泌され、胃腸の消化吸収負担を減らし、血糖値スパイクを防ぎます。',
+        practicalTip: '箸を一口ごとに一度置き、ゆっくり味わうリズムを作る。'
+      },
+      {
+        action: '「超加工食品・白砂糖・過度な揚げ物」の自制',
+        whyEssential: '人工添加物やトランス脂肪酸、急激な血糖値上昇は、細胞を糖化・酸化させ炎症を引き起こします。自ら選んで口にする意識が大切です。',
+        practicalTip: '清涼飲料水を水や白湯・お茶に変え、原材料表示がシンプルな食品を選ぶ。'
+      }
+    ],
+    fordaysAssistHeading: '自力では解決できず、FORDAYSが細胞レベルで助ける領域',
+    fordaysAssistRole: {
+      whySelfAloneIsHard: 'いくらバランスの良い食事を摂っていても、DNA・RNAの生体内合成（デノボ合成）は20代を境に肝機能低下とともに激減します。通常の食材に含まれる高分子核酸は水に溶けにくく、小腸での吸収率が極めて低いという生化学的な限界があります。',
+      howFordaysHelps: 'フォーデイズは独自特許技術で高分子DNAを水溶化し、小腸から即座に吸収されるサルベージ経路を実現。食事だけでは到底補えない「細胞の設計図素材（FCore-2021）」をダイレクトに供給します。',
+      patentsOrIngredients: '特許第7710217号（真皮コラーゲン増加・表皮肥厚抑制） / 独自素材 FCore-2021'
+    }
+  },
+  {
+    pillarId: 'recovery',
+    pillarName: '休養・リカバリー（自律神経と細胞のサビ取り）',
+    pillarEng: 'Mental Rest vs Oxidative Protein Repair',
+    themeColor: 'cyan',
+    selfEffortHeading: 'あなたが自分の意志と習慣でやるべきこと（土台）',
+    selfEffortActions: [
+      {
+        action: '週末の「予定を詰め込まない余白時間」の確保',
+        whyEssential: '常にスケジュールに追われていると、交感神経が24時間過緊張状態になり、内臓や免疫系のメンテナンスが停止します。休む勇気は自分自身でしか持てません。',
+        practicalTip: '週に半日は「何もしない・時計を見ない時間」をカレンダーにブロックする。'
+      },
+      {
+        action: '迷走神経を刺激する「4-7-8 腹式呼吸法」の実践',
+        whyEssential: '呼吸は唯一、自らの意志で自律神経をコントロールできる手段です。深い呼気が副交感神経のスイッチを物理的に入れます。',
+        practicalTip: '仕事の合間や入浴中に、4秒吸って7秒止め、8秒かけてゆっくり吐き切る。'
+      },
+      {
+        action: '自然に触れる「グリーンセラピー・森林浴」',
+        whyEssential: '自然の風景や植物の香り（フィトンチッド）に触れることで、ストレスホルモン「コルチゾール」が急減することが科学的に実証されています。',
+        practicalTip: '近くの公園の木々の下を15分歩くだけでも効果的。'
+      }
+    ],
+    fordaysAssistHeading: '自力では解決できず、FORDAYSが細胞レベルで助ける領域',
+    fordaysAssistRole: {
+      whySelfAloneIsHard: '一度酸化してサビついてしまった体内のタンパク質やミトコンドリアは、気持ちを落ち着かせるだけでは元に戻りません。「酸化したタンパク質を酵素で修復する」生化学的な介入が必要です。',
+      howFordaysHelps: '世界的な注目を集めた最新特許「特許第7857645号（酸化タンパク質修復剤）」が、細胞内の修復酵素（MsrA等）の遺伝子発現を促進。休養している間に、長年の疲労で焦げ付いた細胞タンパク質を巻き戻します。',
+      patentsOrIngredients: '特許第7857645号（酸化タンパク質修復剤・酸化ストレス抑制剤）'
+    }
+  },
+  {
+    pillarId: 'stress',
+    pillarName: 'メンタル・ストレス（腸脳相関と精神の安定）',
+    pillarEng: 'Mindset & Boundaries vs Gut-Brain Axis',
+    themeColor: 'rose',
+    selfEffortHeading: 'あなたが自分の意志と習慣でやるべきこと（土台）',
+    selfEffortActions: [
+      {
+        action: '人間関係や仕事における「健全な境界線（バウンダリー）」を引く',
+        whyEssential: '他人の機嫌や過剰な要求に振り回されていると、脳の偏桃体が暴走し続けます。断るべきことは断るという心理的選択は自分の責任です。',
+        practicalTip: '「自分が変えられること」と「変えられないこと」をノートに書き分けて整理する。'
+      },
+      {
+        action: '1日の終わりに「良かったこと3つ（感謝）」を書き出す',
+        whyEssential: '脳にはネガティブな情報に偏るバイアス（ネガティビティ・バイアス）があります。意識してポジティブな側面に注意を向ける訓練が必要です。',
+        practicalTip: '寝る前に手帳やスマホのメモに「今日の嬉しかったこと」を3行だけメモする。'
+      },
+      {
+        action: '腸内フローラを意識した「発酵食品（納豆・味噌・ぬか漬け）」の日常摂取',
+        whyEssential: '善玉菌の生菌を日頃から食事で取り入れることは毎日の食選びにかかっています。サプリだけに依存しない食卓作りが基本です。',
+        practicalTip: '朝食や夕食に必ず1品、昔ながらの伝統的発酵食品をプラスする。'
+      }
+    ],
+    fordaysAssistHeading: '自力では解決できず、FORDAYSが細胞レベルで助ける領域',
+    fordaysAssistRole: {
+      whySelfAloneIsHard: '過度のストレスがかかると腸管のタイトジャンクション（結合部）がゆるみ、腸から毒素が漏れて脳に慢性微小炎症を起こします（リーキーガット・ブレインフォグ）。これは単なる気合いでは防げません。',
+      howFordaysHelps: '特許第6947610号（腸内短鎖脂肪酸産生促進剤）に基づき、腸内の酪酸菌やビフィズス菌を強力にサポート。腸から脳へのセロトニン・リラックス信号を分子レベルで強化します。',
+      patentsOrIngredients: '特許第6947610号（腸内環境改善・短鎖脂肪酸産生促進） / 特許第6791696号（脳機能改善）'
+    }
+  }
+];
+
+export interface HabitSelfCheckItem {
+  id: string;
+  pillar: string;
+  title: string;
+  description: string;
+}
+
+export const DAILY_HABIT_CHECKLIST: HabitSelfCheckItem[] = [
+  {
+    id: 'h1',
+    pillar: '睡眠',
+    title: '就寝前のスマホ・パソコン画面を暗くするか見ないようにしている',
+    description: 'メラトニン分泌を阻害しないための光コントロール'
+  },
+  {
+    id: 'h2',
+    pillar: '睡眠',
+    title: '毎朝起きたらカーテンを開けて朝日を1分以上浴びている',
+    description: '体内時計をリセットし、夜の深い眠りのタイマーをセット'
+  },
+  {
+    id: 'h3',
+    pillar: '運動',
+    title: '階段を積極的に使ったり、1日8,000歩またはスクワットを意識している',
+    description: '筋肉から分泌される若返りホルモン（マイオカイン）の分泌刺激'
+  },
+  {
+    id: 'h4',
+    pillar: '運動',
+    title: '座りっぱなしにならず、30〜60分に1度は立って身体を伸ばしている',
+    description: '末梢血流のうっ滞とインスリン抵抗性の悪化を防ぐ'
+  },
+  {
+    id: 'h5',
+    pillar: '栄養',
+    title: '毎食手のひらサイズのタンパク質（魚・大豆・肉・卵）を意識して摂っている',
+    description: '筋肉・血管・内臓・免疫細胞を作る基礎アミノ酸の確保'
+  },
+  {
+    id: 'h6',
+    pillar: '栄養',
+    title: '清涼飲料水や甘いお菓子、揚げ物を毎日惰性で食べるのを控えている',
+    description: '細胞の焦げ付き（糖化AGEs）と活性酸素の暴走を自制'
+  },
+  {
+    id: 'h7',
+    pillar: '休養',
+    title: '湯船に10〜15分浸かって深部体温を上げ、身体の緊張をほぐしている',
+    description: '交感神経の興奮を鎮め、内臓修復モードへの移行'
+  },
+  {
+    id: 'h8',
+    pillar: '休養',
+    title: '深呼吸（ゆっくり吐き切る呼吸）を意識して、息を詰めていないか点検している',
+    description: '迷走神経を刺激し、心拍数と血圧を穏やかに保つ'
+  },
+  {
+    id: 'h9',
+    pillar: 'メンタル',
+    title: '他人の目や過剰な要求にNOと言える自分なりの境界線を大切にしている',
+    description: '慢性的なコルチゾール過多による脳海馬の萎縮を防ぐ'
+  },
+  {
+    id: 'h10',
+    pillar: 'メンタル',
+    title: '発酵食品（納豆・味噌汁など）や食物繊維を意識して腸をいたわっている',
+    description: '幸せホルモン「セロトニン」の生合成工場である腸内細菌叢を応援'
+  }
+];
+

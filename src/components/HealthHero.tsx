@@ -221,21 +221,28 @@ export const HealthHero: React.FC = () => {
         </div>
 
         {/* 下部CTAボタン群 */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+        <div className="flex flex-wrap items-center justify-center gap-3.5 mt-10">
           <a
-            href="#sleep-section"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 via-cyan-600 to-emerald-600 hover:from-indigo-500 hover:to-emerald-500 text-white font-black text-sm shadow-xl shadow-cyan-500/20 transition-all hover:scale-103 active:scale-98"
+            href="#role-division-section"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-teal-500/20 transition-all hover:scale-103 active:scale-98"
           >
-            <Moon className="w-4 h-4" />
-            <span>最先端睡眠科学 ＆ ナイトバイオハックを見る</span>
+            <ShieldCheck className="w-4 h-4 text-slate-950" />
+            <span>自力努力（土台） × FORDAYS（ブースト）の役割分担</span>
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
+            href="#sleep-section"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-indigo-900/90 hover:bg-indigo-800 text-indigo-100 border border-indigo-500/50 font-bold text-xs sm:text-sm transition-all hover:scale-102"
+          >
+            <Moon className="w-4 h-4 text-indigo-300" />
+            <span>最先端睡眠科学を見る</span>
+          </a>
+          <a
             href="#diagnostics-section"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold text-sm transition-all hover:scale-102"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 font-bold text-xs sm:text-sm transition-all hover:scale-102"
           >
             <Activity className="w-4 h-4 text-rose-400" />
-            <span>あなたの健康負債スコアを自己診断（無料）</span>
+            <span>健康負債チェック</span>
           </a>
         </div>
       </div>
