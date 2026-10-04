@@ -268,6 +268,7 @@ export const WorkshopPlansSection: React.FC<WorkshopPlansSectionProps> = ({
                       <span className="text-right font-medium text-slate-600">{milestone.evalMetric}</span>
                     </div>
                   </div>
+                ))}
               </div>
 
               {/* 開催周期 ＆ 自社制作アプリ「cheer」による日常伴走フォローアップ */}
