@@ -178,7 +178,7 @@ export default function WorkshopPage() {
       </main>
 
       {/* Global Footer */}
-      <Footer />
+      <Footer onOpenPTModal={handleOpenPTModal} />
 
       {/* Workshop Request Modal */}
       <WorkshopRequestModal

@@ -2,7 +2,7 @@ import React from 'react';
 import { ShieldCheck, AlertCircle, FileText, Activity } from 'lucide-react';
 
 interface FooterProps {
-  onOpenPTModal: () => void;
+  onOpenPTModal?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenPTModal }) => {
