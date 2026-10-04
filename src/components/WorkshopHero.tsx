@@ -113,8 +113,8 @@ export const WorkshopHero: React.FC<WorkshopHeroProps> = ({
           <span className="px-3 py-1 rounded-lg bg-slate-800/60 border border-slate-700/60 text-slate-300">① 美尻＆美姿勢メイク</span>
           <span className="px-3 py-1 rounded-lg bg-slate-800/60 border border-slate-700/60 text-slate-300">② 100歳健歩（歩行・下肢）</span>
           <span className="px-3 py-1 rounded-lg bg-slate-800/60 border border-slate-700/60 text-slate-300">③ 若々しい体作り（抗加齢）</span>
-          <span className="px-3 py-1 rounded-lg bg-pink-950/40 border border-pink-700/40 text-pink-300 font-medium">④ 【女性特化】骨盤底筋＆自律神経</span>
-          <span className="px-3 py-1 rounded-lg bg-amber-950/40 border border-amber-700/40 text-amber-300 font-medium">⑤ 【高齢者特化】転倒予防＆関節ケア</span>
+          <span className="px-3 py-1 rounded-lg bg-pink-950/40 border border-pink-700/40 text-pink-300 font-medium">④ 骨盤底筋＆自律神経（女性特化）</span>
+          <span className="px-3 py-1 rounded-lg bg-amber-950/40 border border-amber-700/40 text-amber-300 font-medium">⑤ 転倒予防＆関節ケア（シニア特化）</span>
         </div>
       </div>
     </section>

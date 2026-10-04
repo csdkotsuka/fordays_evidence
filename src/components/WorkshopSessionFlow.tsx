@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { 
-  WORKSHOP_FLOW, ORGANIZER_BENEFITS 
+  WORKSHOP_FLOW, ORGANIZER_BENEFITS, APP_FOLLOWUP_INFO 
 } from '@/data/workshopPlans';
 import { 
-  Clock, Sparkles, CheckCircle2, Calendar, ArrowRight 
+  Clock, Sparkles, CheckCircle2, Calendar, ArrowRight, Smartphone, ExternalLink, Zap 
 } from 'lucide-react';
 
 interface WorkshopSessionFlowProps {
@@ -73,7 +73,92 @@ export const WorkshopSessionFlow: React.FC<WorkshopSessionFlowProps> = ({
                 </span>
               </div>
             </div>
-          ))}
+        </div>
+
+        {/* 【重要】開催周期 ＆ 自社制作アプリ「cheer」による日常フォローアップ */}
+        <div className="mb-16 rounded-3xl bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900 text-white p-6 sm:p-8 md:p-10 border-2 border-teal-500/40 shadow-2xl relative overflow-hidden">
+          <div className="relative z-10 space-y-6">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-700/80 pb-5">
+              <div className="flex items-center gap-3.5">
+                <div className="w-12 h-12 rounded-2xl bg-teal-500/20 text-teal-300 flex items-center justify-center flex-shrink-0 border border-teal-400/30">
+                  <Smartphone className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-2.5 py-0.5 rounded-full bg-teal-400 text-slate-950 text-[10px] font-black uppercase tracking-wider">
+                      継続伴走システム
+                    </span>
+                    <span className="text-teal-300 text-xs font-bold">
+                      自社制作アプリ連携
+                    </span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-black text-white mt-1">
+                    開催周期（月1回×全3回） ＆ 自社制作アプリ「cheer」による日常フォロー
+                  </h3>
+                </div>
+              </div>
+
+              <div className="flex-shrink-0">
+                <a
+                  href={APP_FOLLOWUP_INFO.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-400 hover:from-teal-300 hover:to-cyan-300 text-slate-950 font-black text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                >
+                  <Smartphone className="w-4 h-4 text-slate-950" />
+                  <span>自社制作アプリ cheer を開く</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-950" />
+                </a>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* 開催周期の説明 */}
+              <div className="bg-slate-800/70 rounded-2xl p-5 border border-slate-700 space-y-3">
+                <div className="flex items-center gap-2 text-teal-300 font-bold text-sm">
+                  <Calendar className="w-4 h-4 text-teal-400" />
+                  <span>実際の開催周期：月1回（全3回・3ヶ月プログラム）</span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  ワークショップは<strong>「月1回（各90分）× 計3回」</strong>のペースで開催します。
+                  1回目で現在地測定と基本フォームを習得し、2回目で中間測定と負荷アップ、3回目で最終変化測定と日常動作の完全自動化を達成します。
+                </p>
+                <div className="grid grid-cols-3 gap-2 pt-2 text-center text-xs">
+                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-700">
+                    <span className="text-teal-300 font-bold block text-[11px]">第1回（1ヶ月目）</span>
+                    <span className="text-[10px] text-slate-400">測定＆リセット</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-700">
+                    <span className="text-cyan-300 font-bold block text-[11px]">第2回（2ヶ月目）</span>
+                    <span className="text-[10px] text-slate-400">中間評価＆強化</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-700">
+                    <span className="text-emerald-300 font-bold block text-[11px]">第3回（3ヶ月目）</span>
+                    <span className="text-[10px] text-slate-400">最終成果の確定</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 間の1ヶ月を支える自社アプリcheer */}
+              <div className="bg-slate-800/70 rounded-2xl p-5 border border-slate-700 space-y-3">
+                <div className="flex items-center gap-2 text-cyan-300 font-bold text-sm">
+                  <Zap className="w-4 h-4 text-cyan-400" />
+                  <span>ワークショップ間の1ヶ月間を「cheer」で手厚くフォロー</span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {APP_FOLLOWUP_INFO.description}
+                </p>
+                <ul className="space-y-1.5 text-xs text-slate-300 pt-1">
+                  {APP_FOLLOWUP_INFO.features.map((feat, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>{feat.title}：</strong>{feat.description}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Organizer Benefits Section */}
