@@ -287,7 +287,7 @@ export const WorkshopPlansSection: React.FC<WorkshopPlansSectionProps> = ({
                       </span>
                     </div>
                     <p className="text-xs text-slate-600 leading-relaxed max-w-2xl">
-                      月1回の集合ワークショップで測定・フォーム修正を行い、次の開催までの1ヶ月間は<strong>自社制作ヘルスケアアプリ「cheer（チア）」</strong>を使って毎日の3分セルフケアやサプリ飲用を楽しく記録。三日坊主を防ぎ、3ヶ月後の確実な変化へ伴走します。
+                      定期集合ワークショップ（月2回推奨・月1回〜月4回まで柔軟対応）で測定とフォーム修正を行い、日常は<strong>自社制作ヘルスケアアプリ「cheer（チア）」</strong>を使って週2〜3回のセルフケアやサプリ飲用を楽しく記録。サロンのスケジュールや参加者のペースに合わせて無理なくカスタマイズ可能です。
                     </p>
                   </div>
                 </div>

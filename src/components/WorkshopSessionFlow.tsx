@@ -94,7 +94,7 @@ export const WorkshopSessionFlow: React.FC<WorkshopSessionFlowProps> = ({
                     </span>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-black text-white mt-1">
-                    開催周期（月1回×全3回） ＆ 自社制作アプリ「cheer」による日常フォロー
+                    開催周期（月2回推奨／柔軟にカスタマイズ可能） ＆ 自社制作アプリ「cheer」による日常フォロー
                   </h3>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export const WorkshopSessionFlow: React.FC<WorkshopSessionFlowProps> = ({
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-400 hover:from-teal-300 hover:to-cyan-300 text-slate-950 font-black text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer"
                 >
                   <Smartphone className="w-4 h-4 text-slate-950" />
-                  <span>自社制作アプリ cheer を開く</span>
+                  <span>自社アプリ cheer を見る</span>
                   <ExternalLink className="w-3.5 h-3.5 text-slate-950" />
                 </a>
               </div>
@@ -118,33 +118,38 @@ export const WorkshopSessionFlow: React.FC<WorkshopSessionFlowProps> = ({
               <div className="bg-slate-800/70 rounded-2xl p-5 border border-slate-700 space-y-3">
                 <div className="flex items-center gap-2 text-teal-300 font-bold text-sm">
                   <Calendar className="w-4 h-4 text-teal-400" />
-                  <span>実際の開催周期：月1回（全3回・3ヶ月プログラム）</span>
+                  <span>開催周期：月2回（隔週）推奨 ＆ 柔軟なカスタマイズ</span>
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  ワークショップは<strong>「月1回（各90分）× 計3回」</strong>のペースで開催します。
-                  1回目で現在地測定と基本フォームを習得し、2回目で中間測定と負荷アップ、3回目で最終変化測定と日常動作の完全自動化を達成します。
+                  運動の習慣化には<strong>週2〜3回の継続</strong>が不可欠ですが、アプリだけの記録ではフォームの癖に気づけず、毎週の対面受講はお互いに負担が大きくなります。そのため<strong>【月2回（隔週）の集合ワークショップ ＋ アプリ伴走】</strong>を最も効果的な推奨モデルとしています。
                 </p>
-                <div className="grid grid-cols-3 gap-2 pt-2 text-center text-xs">
-                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-700">
-                    <span className="text-teal-300 font-bold block text-[11px]">第1回（1ヶ月目）</span>
-                    <span className="text-[10px] text-slate-400">測定＆リセット</span>
+                <div className="space-y-2 pt-1 text-xs">
+                  <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700 flex items-start justify-between gap-3">
+                    <div>
+                      <span className="text-teal-300 font-bold block text-xs">① スタンダード推奨（月2回・隔週ペース）</span>
+                      <span className="text-[11px] text-slate-400">間延びせず、直接のフォーム修正と自宅セルフケアの好循環が最も定着しやすい王道プラン</span>
+                    </div>
+                    <span className="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-[10px] font-bold whitespace-nowrap">おすすめ</span>
                   </div>
-                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-700">
-                    <span className="text-cyan-300 font-bold block text-[11px]">第2回（2ヶ月目）</span>
-                    <span className="text-[10px] text-slate-400">中間評価＆強化</span>
+                  <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700">
+                    <span className="text-cyan-300 font-bold block text-xs">② 月1回ペース（全3回・じっくり3ヶ月）</span>
+                    <span className="text-[11px] text-slate-400">サロンの月例イベント等に合わせ、月1回の測定と間のアプリ伴走でマイペースに継続</span>
                   </div>
-                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-700">
-                    <span className="text-emerald-300 font-bold block text-[11px]">第3回（3ヶ月目）</span>
-                    <span className="text-[10px] text-slate-400">最終成果の確定</span>
+                  <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700">
+                    <span className="text-indigo-300 font-bold block text-xs">③ 集中月4回（週1回集中型）</span>
+                    <span className="text-[11px] text-slate-400">短期間で一気にフォーム習得や筋力改善を目指す特別集中プログラム</span>
                   </div>
                 </div>
+                <p className="text-[11px] text-teal-300/90 font-medium pt-1">
+                  ※参加者の体力やサロンの開催スケジュール、ご予算に合わせて回数や期間は柔軟にカスタマイズいたします。
+                </p>
               </div>
 
               {/* 間の1ヶ月を支える自社アプリcheer */}
               <div className="bg-slate-800/70 rounded-2xl p-5 border border-slate-700 space-y-3">
                 <div className="flex items-center gap-2 text-cyan-300 font-bold text-sm">
                   <Zap className="w-4 h-4 text-cyan-400" />
-                  <span>ワークショップ間の1ヶ月間を「cheer」で手厚くフォロー</span>
+                  <span>ワークショップ間の日常を「cheer」で手厚くフォロー</span>
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed">
                   {APP_FOLLOWUP_INFO.description}
