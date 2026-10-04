@@ -73,6 +73,7 @@ export const WorkshopSessionFlow: React.FC<WorkshopSessionFlowProps> = ({
                 </span>
               </div>
             </div>
+          ))}
         </div>
 
         {/* 【重要】開催周期 ＆ 自社制作アプリ「cheer」による日常フォローアップ */}

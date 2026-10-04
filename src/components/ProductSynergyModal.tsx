@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { 
-  X, ShoppingBag, Sparkles, CheckCircle2, Clock, Zap, ShieldCheck, ArrowRight
+  X, ShoppingBag, Sparkles, Clock, ShieldCheck 
 } from 'lucide-react';
 import { PRODUCT_SYNERGY_DETAILS, ProductSynergyDetail } from '@/data/workshopPlans';
 
