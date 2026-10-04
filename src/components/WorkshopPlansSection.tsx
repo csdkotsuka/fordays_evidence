@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import { 
-  WORKSHOP_PLANS, WorkshopPlan, MonthlyMilestone, ExerciseItem 
+  WORKSHOP_PLANS, WorkshopPlan 
 } from '@/data/workshopPlans';
 import { 
   Sparkles, Footprints, Flame, HeartHandshake, ShieldAlert, 
-  CheckCircle2, AlertTriangle, ArrowRight, Calendar, UserCheck, 
-  Dumbbell, Clock, Target, Layers, ShoppingBag, Zap, ChevronRight
+  CheckCircle2, AlertTriangle, ArrowRight, Calendar, Award, 
+  Dumbbell, Clock, Target, ShoppingBag, Zap
 } from 'lucide-react';
 
 interface WorkshopPlansSectionProps {

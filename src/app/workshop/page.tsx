@@ -10,10 +10,7 @@ import { WorkshopPlanDiagnostician } from '@/components/WorkshopPlanDiagnosticia
 import { WorkshopSessionFlow } from '@/components/WorkshopSessionFlow';
 import { WorkshopRequestModal } from '@/components/WorkshopRequestModal';
 import { PersonalTraining } from '@/components/PersonalTraining';
-import { 
-  ArrowLeft, Sparkles, ShieldCheck, Dumbbell, HeartPulse, 
-  HelpCircle, Calendar, Users, CheckCircle2 
-} from 'lucide-react';
+import { ArrowLeft, Sparkles, HelpCircle, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
 export default function WorkshopPage() {
@@ -119,7 +116,7 @@ export default function WorkshopPage() {
                 <span>よくある質問</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-slate-900">
-                ワークショップ開催に関するQ&amp;A
+                ワークショップ開催に関するQ＆A
               </h3>
             </div>
 

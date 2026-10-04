@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { 
-  X, Calendar, Send, CheckCircle2, UserCheck, MapPin, 
-  Users, MessageSquare, Sparkles, Phone, Mail
+  X, Calendar, Send, CheckCircle2, UserCheck, MapPin 
 } from 'lucide-react';
 import { WORKSHOP_PLANS } from '@/data/workshopPlans';
 

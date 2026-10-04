@@ -5,8 +5,7 @@ import {
   WORKSHOP_FLOW, ORGANIZER_BENEFITS 
 } from '@/data/workshopPlans';
 import { 
-  Clock, Users, Sparkles, CheckCircle2, Award, Calendar, 
-  MapPin, ShieldCheck, ArrowRight, HelpCircle
+  Clock, Sparkles, CheckCircle2, Calendar, ArrowRight 
 } from 'lucide-react';
 
 interface WorkshopSessionFlowProps {

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ShieldCheck, Dumbbell, Menu, Sparkles, ChevronRight, Briefcase, ShoppingBag, HeartPulse, Calendar } from 'lucide-react';
+import { ShieldCheck, Dumbbell, Menu, Sparkles, Briefcase, ShoppingBag, HeartPulse, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { SidebarMenu } from '@/components/SidebarMenu';
 

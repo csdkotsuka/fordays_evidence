@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { 
-  Activity, Zap, ShieldCheck, HeartPulse, Sparkles, BookOpen, 
-  Dumbbell, ShoppingBag, ArrowRight, CheckCircle2, ChevronRight
+  Activity, Zap, Dumbbell, ShoppingBag, CheckCircle2 
 } from 'lucide-react';
 
 export const WorkshopSynergySection: React.FC = () => {

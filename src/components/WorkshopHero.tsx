@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { 
-  Dumbbell, Sparkles, HeartPulse, UserCheck, Calendar, ShieldCheck, 
-  ArrowRight, CheckCircle2, Award, Users, Flame, Footprints, ChevronDown
+  UserCheck, Sparkles, Calendar, ShieldCheck, ArrowRight, ChevronDown
 } from 'lucide-react';
 
 interface WorkshopHeroProps {

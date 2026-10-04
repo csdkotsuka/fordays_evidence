@@ -1,10 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { 
-  HelpCircle, Sparkles, CheckCircle2, ArrowRight, RefreshCw, 
-  Target, Footprints, Flame, HeartHandshake, ShieldAlert, Award
-} from 'lucide-react';
+import { Sparkles, ArrowRight, Award } from 'lucide-react';
 import { WORKSHOP_PLANS } from '@/data/workshopPlans';
 
 interface WorkshopPlanDiagnosticianProps {
