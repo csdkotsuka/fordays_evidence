@@ -41,6 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPTModal }) => {
               <li><a href="/skincare-routine" className="text-purple-300 font-bold hover:text-purple-200 transition-colors">洗顔・スキンケア ＆ メイク手順</a></li>
               <li><a href="/evidence" className="text-cyan-300 font-bold hover:text-cyan-200 transition-colors">エビデンス検証ポータル（特許・論文原本）</a></li>
               <li><a href="/business" className="text-amber-300 font-bold hover:text-amber-200 transition-colors">ビジネス真実ガイド（特商法・他社比較）</a></li>
+              <li><a href="/workshop" className="text-teal-300 font-bold hover:text-teal-200 transition-colors">健康増進＆運動療法ワークショップ</a></li>
               <li><a href="/exercise-prescription" className="text-emerald-300 font-bold hover:text-emerald-200 transition-colors">40代〜90代の運動処方学</a></li>
               <li>
                 <button

@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { 
   X, Home, Briefcase, ShieldCheck, Dumbbell, 
-  HelpCircle, ChevronRight, Sparkles, PhoneCall, ExternalLink, ShoppingBag, HeartPulse, Moon
+  HelpCircle, ChevronRight, Sparkles, PhoneCall, ExternalLink, ShoppingBag, HeartPulse, Moon, Calendar
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -88,6 +88,14 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, onClose, onOpe
       icon: Sparkles,
       badge: '6大パターン解説',
       badgeColor: 'bg-purple-100 text-purple-900 border-purple-300 font-bold',
+    },
+    {
+      title: '健康増進＆運動療法ワークショップ',
+      subtitle: '美尻・100歳健歩・抗加齢・骨盤底筋・転倒予防の5大3ヶ月プラン',
+      href: '/workshop',
+      icon: Calendar,
+      badge: '出張開催受付中',
+      badgeColor: 'bg-teal-100 text-teal-900 border-teal-300 font-bold',
     },
     {
       title: '40代〜90代の臨床運動処方学',

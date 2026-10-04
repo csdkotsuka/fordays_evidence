@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ShieldCheck, BookOpen, ArrowRight, ExternalLink, Dumbbell, Sparkles, CheckCircle2, ShoppingBag } from 'lucide-react';
+import { ShieldCheck, BookOpen, ArrowRight, ExternalLink, Dumbbell, Sparkles, CheckCircle2, ShoppingBag, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
 interface EvidenceBridgeBannerProps {
@@ -181,7 +181,36 @@ export const EvidenceBridgeBanner: React.FC<EvidenceBridgeBannerProps> = ({ onOp
           </div>
         </div>
 
-        {/* ビジネスとして取り組みたい人向けカード */}
+        {/* 【新設・注目】FORDAYSサロン・イベント向け 運動療法ワークショップ 特集バナー */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-teal-950/90 via-slate-900 to-cyan-950 border-2 border-teal-400/50 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 hover:border-teal-300 transition-all">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 text-left">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-400 to-cyan-500 text-slate-950 flex items-center justify-center flex-shrink-0 text-2xl font-black shadow-lg shadow-teal-500/20">
+              <Calendar className="w-8 h-8" />
+            </div>
+            <div className="space-y-1.5">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded-full bg-teal-400 text-slate-950 text-[10px] font-black uppercase">
+                  イベント・サロン主催者様必見
+                </span>
+                <span className="text-teal-300 text-xs font-bold">健康増進 ＆ 運動療法ワークショップ</span>
+                <span className="px-2 py-0.5 rounded bg-pink-900/60 text-pink-300 text-[10px] border border-pink-700/50">女性・高齢者特化あり</span>
+              </div>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white">
+                「美尻」「100歳健歩」「抗加齢」「骨盤底筋」「転倒予防」の5大3ヶ月プラン
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+                サプリを飲むだけでなく、理学療法士が体幹筋（コア）と正しい動作を直接指導。3ヶ月で参加者全員が変化を実感し、サロンの信頼と定期愛飲率が劇的に高まる体験型出張セミナー。
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/workshop"
+            className="w-full lg:w-auto px-7 py-4 rounded-2xl bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400 hover:from-teal-300 hover:to-emerald-300 text-slate-950 font-black text-sm shadow-xl shadow-teal-500/25 transition-all hover:scale-105 whitespace-nowrap flex-shrink-0 flex items-center justify-center gap-2"
+          >
+            <span>ワークショップ詳細を見る</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
         <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-amber-950/90 via-slate-900 to-slate-950 border-2 border-amber-500/50 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4 text-center md:text-left">
             <div className="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-300 flex items-center justify-center flex-shrink-0 text-2xl">
