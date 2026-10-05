@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { 
   X, Home, Briefcase, ShieldCheck, Dumbbell, 
-  HelpCircle, ChevronRight, Sparkles, PhoneCall, ExternalLink, ShoppingBag, HeartPulse, Moon, Calendar
+  HelpCircle, ChevronRight, Sparkles, PhoneCall, ExternalLink, ShoppingBag, HeartPulse, Moon, Calendar, GraduationCap
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -104,6 +104,14 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, onClose, onOpe
       icon: Dumbbell,
       badge: '臨床運動学',
       badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200',
+    },
+    {
+      title: 'PPK（ピンピンコロリ）完全体系論',
+      subtitle: '病態圧縮理論・40代の分岐点・体育トラウマ・過剰医療5兆円シフト',
+      href: '/ppk',
+      icon: GraduationCap,
+      badge: '特集・構造改革',
+      badgeColor: 'bg-teal-100 text-teal-950 border-teal-300 font-bold',
     },
   ];
 

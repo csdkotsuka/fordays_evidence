@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ShieldCheck, Dumbbell, Menu, Sparkles, Briefcase, ShoppingBag, HeartPulse, Calendar } from 'lucide-react';
+import { ShieldCheck, Dumbbell, Menu, Sparkles, Briefcase, ShoppingBag, HeartPulse, Calendar, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 import { SidebarMenu } from '@/components/SidebarMenu';
 
@@ -52,6 +52,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
 
             {/* 右側: クイックリンク（ビジネス） ＋ CTA */}
             <div className="flex items-center gap-2.5 sm:gap-3">
+              {/* PPK（ピンピンコロリ）完全体系へのクイックリンク */}
+              <Link
+                href="/ppk"
+                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-teal-950 bg-teal-100/80 hover:bg-teal-200/80 border border-teal-300 transition-all hover:scale-102"
+              >
+                <GraduationCap className="w-3.5 h-3.5 text-teal-700" />
+                <span>PPK完全体系論</span>
+              </Link>
+
               {/* 運動療法ワークショップへのクイックリンク */}
               <Link
                 href="/workshop"
