@@ -5,7 +5,8 @@ import {
   ShieldCheck, HeartPulse, ArrowLeft, CheckCircle2, AlertTriangle, 
   Activity, BookOpen, ExternalLink, Zap, ChevronRight, Sparkles, 
   UserCheck, ArrowRight, Award, Target, Flame, Users, Scale, 
-  TrendingDown, TrendingUp, DollarSign, Brain, GraduationCap, Clock, FileText, HelpCircle
+  TrendingDown, TrendingUp, DollarSign, Brain, GraduationCap, Clock, FileText, HelpCircle,
+  Compass
 } from 'lucide-react';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
@@ -108,18 +109,40 @@ export default function PPKPage() {
         </section>
 
         {/* Index Jump Nav */}
-        <section className="sticky top-16 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-xs">
+        <section className="sticky top-16 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 py-2.5 shadow-xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar text-xs font-bold text-slate-600 whitespace-nowrap py-1">
-              <span className="text-slate-400 font-normal shrink-0">目次ジャンプ:</span>
-              <a href="#section-1" className="px-3 py-1 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors">1. PPKの5大要件</a>
-              <a href="#section-2" className="px-3 py-1 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors">2. 40代からの病態圧縮</a>
-              <a href="#section-3" className="px-3 py-1 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors">3. 40代運動2割の壁</a>
-              <a href="#section-4" className="px-3 py-1 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors">4. 運動量神話の罠</a>
-              <a href="#section-5" className="px-3 py-1 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors">5. 体育の罪と親業</a>
-              <a href="#section-6" className="px-3 py-1 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors">6. 部活ハザードと指導者</a>
-              <a href="#section-7" className="px-3 py-1 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors">7. 過剰医療5兆円シフト</a>
-              <a href="#section-8" className="px-3 py-1 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors">8. 政治の壁と出口戦略</a>
+            <div className="flex items-center md:items-start gap-2 sm:gap-2.5">
+              {/* 目次ラベルバッジ */}
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-teal-50 text-teal-850 border border-teal-200/90 text-xs font-bold shrink-0 md:mt-0.5">
+                <Compass className="w-3.5 h-3.5 text-teal-600" />
+                <span className="hidden sm:inline">目次ジャンプ</span>
+                <span className="sm:hidden">目次</span>
+              </div>
+
+              {/* 目次ボタン群: PC(md以上)は2〜3行折り返し(横スクロール不要) / スマホはスワイプ横スクロール */}
+              <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5 md:flex-wrap md:overflow-visible w-full">
+                {[
+                  { id: 'section-1', num: '1', title: 'PPKの5大要件' },
+                  { id: 'section-2', num: '2', title: '40代からの病態圧縮' },
+                  { id: 'section-3', num: '3', title: '40代運動2割の壁' },
+                  { id: 'section-4', num: '4', title: '運動量神話の罠' },
+                  { id: 'section-5', num: '5', title: '体育の罪と親業' },
+                  { id: 'section-6', num: '6', title: '部活ハザードと指導者' },
+                  { id: 'section-7', num: '7', title: '過剰医療5兆円シフト' },
+                  { id: 'section-8', num: '8', title: '政治の壁と出口戦略' },
+                ].map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-100/90 hover:bg-teal-50 text-slate-700 hover:text-teal-950 border border-slate-200/90 hover:border-teal-300 text-xs font-bold transition-all shadow-2xs hover:shadow-xs active:scale-95 group cursor-pointer"
+                  >
+                    <span className="w-4 h-4 rounded-md bg-slate-200/90 group-hover:bg-teal-600 text-slate-600 group-hover:text-white text-[10px] flex items-center justify-center font-black transition-colors">
+                      {item.num}
+                    </span>
+                    <span>{item.title}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -127,7 +150,7 @@ export default function PPKPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
           
           {/* SECTION 1: PPKの定義と5大要件 */}
-          <section id="section-1" className="scroll-mt-32 space-y-6">
+          <section id="section-1" className="scroll-mt-36 md:scroll-mt-44 space-y-6">
             <div className="border-l-4 border-teal-600 pl-4">
               <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Dimension 01</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
@@ -212,7 +235,7 @@ export default function PPKPage() {
           </section>
 
           {/* SECTION 2: 40代からの病態圧縮理論 */}
-          <section id="section-2" className="scroll-mt-32 space-y-6">
+          <section id="section-2" className="scroll-mt-36 md:scroll-mt-44 space-y-6">
             <div className="border-l-4 border-teal-600 pl-4">
               <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Dimension 02</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
@@ -271,7 +294,7 @@ export default function PPKPage() {
           </section>
 
           {/* SECTION 3: 40代運動2割の壁 */}
-          <section id="section-3" className="scroll-mt-32 space-y-6">
+          <section id="section-3" className="scroll-mt-36 md:scroll-mt-44 space-y-6">
             <div className="border-l-4 border-teal-600 pl-4">
               <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Dimension 03</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
@@ -378,7 +401,7 @@ export default function PPKPage() {
           </section>
 
           {/* SECTION 4: 運動量神話の罠 */}
-          <section id="section-4" className="scroll-mt-32 space-y-6">
+          <section id="section-4" className="scroll-mt-36 md:scroll-mt-44 space-y-6">
             <div className="border-l-4 border-teal-600 pl-4">
               <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Dimension 04</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
@@ -456,7 +479,7 @@ export default function PPKPage() {
           </section>
 
           {/* SECTION 5: 体育の罪と親業 */}
-          <section id="section-5" className="scroll-mt-32 space-y-6">
+          <section id="section-5" className="scroll-mt-36 md:scroll-mt-44 space-y-6">
             <div className="border-l-4 border-teal-600 pl-4">
               <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Dimension 05</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
@@ -515,7 +538,7 @@ export default function PPKPage() {
           </section>
 
           {/* SECTION 6: 部活ハザードと指導者改革 */}
-          <section id="section-6" className="scroll-mt-32 space-y-6">
+          <section id="section-6" className="scroll-mt-36 md:scroll-mt-44 space-y-6">
             <div className="border-l-4 border-teal-600 pl-4">
               <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Dimension 06</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
@@ -597,7 +620,7 @@ export default function PPKPage() {
           </section>
 
           {/* SECTION 7: 過剰医療5兆円シフト */}
-          <section id="section-7" className="scroll-mt-32 space-y-6">
+          <section id="section-7" className="scroll-mt-36 md:scroll-mt-44 space-y-6">
             <div className="border-l-4 border-teal-600 pl-4">
               <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Dimension 07</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
@@ -676,7 +699,7 @@ export default function PPKPage() {
           </section>
 
           {/* SECTION 8: 政治の壁と出口戦略 */}
-          <section id="section-8" className="scroll-mt-32 space-y-6">
+          <section id="section-8" className="scroll-mt-36 md:scroll-mt-44 space-y-6">
             <div className="border-l-4 border-teal-600 pl-4">
               <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Dimension 08</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
