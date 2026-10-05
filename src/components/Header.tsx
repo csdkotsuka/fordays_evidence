@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ShieldCheck, Dumbbell, Menu, Sparkles, Briefcase, ShoppingBag, HeartPulse, Calendar, GraduationCap } from 'lucide-react';
+import { ShieldCheck, Dumbbell, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { SidebarMenu } from '@/components/SidebarMenu';
 
@@ -50,66 +50,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPTModal }) => {
               </Link>
             </div>
 
-            {/* 右側: クイックリンク（ビジネス） ＋ CTA */}
+            {/* 右側: CTAボタン */}
             <div className="flex items-center gap-2.5 sm:gap-3">
-              {/* PPK（ピンピンコロリ）完全体系へのクイックリンク */}
-              <Link
-                href="/ppk"
-                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-teal-950 bg-teal-100/80 hover:bg-teal-200/80 border border-teal-300 transition-all hover:scale-102"
-              >
-                <GraduationCap className="w-3.5 h-3.5 text-teal-700" />
-                <span>PPK完全体系論</span>
-              </Link>
-
-              {/* 運動療法ワークショップへのクイックリンク */}
-              <Link
-                href="/workshop"
-                className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-teal-900 bg-teal-50 hover:bg-teal-100 border border-teal-200/80 transition-all hover:scale-102"
-              >
-                <Calendar className="w-3.5 h-3.5 text-teal-600" />
-                <span>運動ワークショップ</span>
-              </Link>
-
-              {/* 健康科学・睡眠バイオハックへのクイックリンク */}
-              <Link
-                href="/health"
-                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-indigo-900 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200/80 transition-all hover:scale-102"
-              >
-                <HeartPulse className="w-3.5 h-3.5 text-indigo-600" />
-                <span>健康科学 ＆ 睡眠</span>
-              </Link>
-
-              {/* 洗顔・メイク手順へのクイックリンク */}
-              <Link
-                href="/skincare-routine"
-                className="hidden 2xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-200/80 transition-all hover:scale-102"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-                <span>洗顔・メイク手順</span>
-              </Link>
-
-              {/* 製品カタログへのクイックリンク */}
-              <Link
-                href="/products"
-                className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-teal-900 bg-teal-50 hover:bg-teal-100 border border-teal-200/80 transition-all hover:scale-102"
-              >
-                <ShoppingBag className="w-3.5 h-3.5 text-teal-600" />
-                <span>製品カタログ ＆ 批評</span>
-              </Link>
-
-              {/* ビジネスガイドへのクイックリンク（控えめかつ分かりやすいバッジ） */}
-              <Link
-                href="/business"
-                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 transition-all hover:scale-102"
-              >
-                <Briefcase className="w-3.5 h-3.5 text-amber-600" />
-                <span>ビジネス真実ガイド</span>
-              </Link>
-
               {/* PT指導相談ボタン */}
               <button
                 onClick={onOpenPTModal}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 shadow-md shadow-teal-600/20 transition-all hover:scale-102 active:scale-98"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 shadow-md shadow-teal-600/20 transition-all hover:scale-102 active:scale-98 cursor-pointer"
               >
                 <Dumbbell className="w-4 h-4" />
                 <span className="hidden xs:inline">無料個別相談</span>
