@@ -601,7 +601,7 @@ export default function PPKPage() {
                   <div className="space-y-1">
                     <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">最大のボトルネック解消</span>
                     <h4 className="font-bold text-slate-900 text-sm">
-                      指導者（PT/AT）のプロ化と3大ブレイクスルー
+                      指導者（PT/AT）のプロ化と4大ブレイクスルー
                     </h4>
                     <p className="text-xs text-slate-600">
                       教員の部活無償労働から脱却し、専門資格者が高給で現場参入するエコシステム。
@@ -609,11 +609,39 @@ export default function PPKPage() {
                   </div>
                   <button
                     onClick={() => openTopicModal('coach-revolution')}
-                    className="self-start px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-colors shadow-xs flex items-center gap-1.5"
+                    className="self-start px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-colors shadow-xs flex items-center gap-1.5 cursor-pointer"
                   >
                     <span>指導者OS改革の詳細を見る</span>
                     <ChevronRight className="w-4 h-4" />
                   </button>
+                </div>
+              </div>
+
+              {/* コラム: 運動指導者の育成と義務教育改革のリアル */}
+              <div className="p-5 sm:p-6 rounded-2xl bg-amber-50/80 border border-amber-200 text-slate-800 space-y-3">
+                <div className="flex items-center gap-2 text-amber-900 font-black text-sm sm:text-base">
+                  <GraduationCap className="w-5 h-5 text-amber-700 shrink-0" />
+                  <span>【現場からの警鐘】運動指導者（理学療法士）の育成危機と、義務教育「留年制度」という根本改革</span>
+                </div>
+                <div className="text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2.5">
+                  <p>
+                    PPK（ピンピンコロリ）を実現するために、実際に現場で正しく安全な運動を処方・指導できる人材育成は不可欠です。その中核を担う専門職の一つが<strong>理学療法士（PT）</strong>であり、筆者自身もその臨床現場に立つ当事者の一人です。
+                  </p>
+                  <p>
+                    しかし現在、理学療法に限った話ではありませんが、大学や専門学校が定員割れ等によって極めて入りやすくなりすぎた結果、<strong>「高校まで全く勉強をしてこなかった人」でも容易に入学できてしまう</strong>という深刻な学力地盤沈下が起きています。
+                  </p>
+                  <p>
+                    もちろんそうした人たちの全員が資格を取れないわけではありません。入学後に真剣に猛勉強を重ねてギリギリ国家資格を掴み取る学生も一定数存在します。しかし現実には、<strong>「小学校レベルの基礎学習（四則演算や基礎的な日本語読解）すら定着していない」</strong>学生までもが混在して医療教育の現場に流入してきています。
+                  </p>
+                  <div className="p-3.5 rounded-xl bg-white/90 border border-amber-300/80 text-amber-950 font-medium space-y-1">
+                    <span className="font-bold text-xs sm:text-sm text-amber-900 block">
+                      💡 抜本的な解決策：小・中学校における「留年制度（履修・修得主義）」の導入
+                    </span>
+                    <p className="text-xs text-slate-700 leading-relaxed">
+                      国家試験の難易度や養成校のカリキュラムをいじるだけでは、この最上流の破綻を止めることはできません。
+                      実現が決して容易でないことは百も承知ですが、<strong>文部科学省を動かし、義務教育段階で一定水準に達していない生徒を自動進級させずにしっかり学び直させる「留年制度」</strong>を社会実装することこそが、真の解決策です。基礎学力の防波堤を再構築してはじめて、国民の命と健康寿命を支える高度な指導者・医療人の質を担保することができます。
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
